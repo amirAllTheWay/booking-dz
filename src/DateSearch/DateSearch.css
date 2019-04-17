@@ -1,0 +1,23 @@
+.DateSearch {
+    height: 50%;
+    width: 14%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.DatePicker {
+    height: 15px;
+    width: 140px;
+    border: 2px solid lightgrey;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: smaller;
+}
+
+.DateTitle {
+    font-size: x-small;
+    width: fit-content;
+    color: white;
+}

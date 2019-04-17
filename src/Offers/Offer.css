@@ -1,0 +1,17 @@
+.Offer {
+    height: 100%;
+
+
+    margin-right: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.OfferClicked {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+.OfferNotClicked {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+}

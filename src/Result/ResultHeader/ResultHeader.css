@@ -1,0 +1,14 @@
+.ResultHeader {
+    background-image: url('main_background_image.jpg');
+    height: 400px;
+
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.RHContainer {
+    width: 70%;
+}

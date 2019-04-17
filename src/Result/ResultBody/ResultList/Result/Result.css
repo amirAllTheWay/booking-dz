@@ -1,0 +1,38 @@
+.Result {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 95%;
+    margin-top: 2%;
+    margin-left: 2.5%;
+}
+
+.FlyingCompanyColumn {
+    flex-direction: column;
+    background-color: burlywood;
+    width: 20%;
+}
+
+.ResultDetailsColumn {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    width: 60%;
+    align-content: flex-end;
+}
+
+.PriceColumn {
+    flex-direction: column;
+    background-color: blueviolet;
+    width: 20%;
+}
+
+.CityInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.HotelInfo {
+}

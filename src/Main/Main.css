@@ -1,0 +1,9 @@
+.Main {
+    margin-top: 38px;
+    background-image: url('main_background_image.jpg');
+    height: 800px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

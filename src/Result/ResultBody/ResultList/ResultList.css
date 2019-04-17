@@ -1,0 +1,8 @@
+.ResultList {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    background-color: brown;
+    justify-content: center;
+    overflow-y: scroll;
+}
