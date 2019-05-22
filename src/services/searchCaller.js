@@ -1,7 +1,7 @@
+import axios from 'axios'
 
 
-
-const notifySearchButtonClicked = () => {
+const notifySearchButtonClicked = (payload, response) => {
 
     let researchResults = {
         researchType: "tourism",
@@ -11,45 +11,58 @@ const notifySearchButtonClicked = () => {
                 flyingCompanyLogo: "./logo_air_algerie.jpg",
                 departureCity: "Alger",
                 destinationCity: "Rome",
-                hotel: "Hilton",
+                hotel: "Hotel Hilton",
                 price: "380€"
             },
             {
                 flyingCompany: "Air France",
                 departureCity: "Paris",
                 destinationCity: "New York",
-                hotel: "Hilton",
+                hotel: "Hotel Sofitel",
                 price: "550€"
             },
             {
                 flyingCompany: "Alitalia",
                 departureCity: "Alger",
                 destinationCity: "Rome",
-                hotel: "Hilton",
+                hotel: "Hotel El Mourradia",
                 price: "180€"
             },
             {
                 flyingCompany: "Vueling",
                 departureCity: "Alger",
                 destinationCity: "Prague",
-                hotel: "Hilton",
+                hotel: "Hotel Marriott",
                 price: "475€"
             }
         ]
     };
 
+
+    let serverTourismResults = {
+        researchType: "tourism",
+        results: response.data.tourismOffers
+    };
+
+    console.log("getTourismResults: ", payload, " response: ", serverTourismResults, " researchResults: ", researchResults);
+
+
     return {
         type: "RESEARCH_RESPONSE_RECEIVED",
-        payload: researchResults
+        payload: serverTourismResults
     };
 };
 
 
 export const getTourismResults = (payload) => {
 
+
+    console.log("getTourismResults");
     return dispatch => {
-        setTimeout(() => {
-            dispatch(notifySearchButtonClicked(payload));
-        }, 5000);
+        axios.get("http://localhost:8000/getOffers/allTourismOffers").then(
+            response => dispatch(notifySearchButtonClicked(payload, response)),
+            (error) => { console.log("ERROR: ", error.toString()) }
+        )
+
     };
 };
