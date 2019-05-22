@@ -7,7 +7,8 @@
 .ResultMain {
     display: flex;
     flex-direction: row;
-    margin-right: 15%;
-    margin-left: 15%;
+    margin-right: 10%;
+    margin-left: 12%;
     overflow-y: scroll;
+    width: 80%;
 }

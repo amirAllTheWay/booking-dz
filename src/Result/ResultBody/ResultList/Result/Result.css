@@ -1,24 +1,30 @@
 .Result {
     display: flex;
     flex-direction: row;
-    height: 200px;
+    height: 194px;
     width: 95%;
     margin-top: 2%;
     margin-left: 2.5%;
+    margin-bottom: 2%;
+    resize: none;
 }
 
+.img {
+    flex:1
+}
 .FlyingCompanyColumn {
+    alignItems:'center';
     flex-direction: column;
     background-color: burlywood;
-    width: 20%;
+    width: 30%;
+    background-size: cover;
 }
 
 .ResultDetailsColumn {
     display: flex;
     flex-direction: column;
     background-color: aquamarine;
-    width: 60%;
-    align-content: flex-end;
+    width: 50%;
 }
 
 .PriceColumn {
@@ -35,4 +41,7 @@
 
 
 .HotelInfo {
+    display: flex;
+    margin-left: 15px;
+    justify-content: flex-start;
 }
