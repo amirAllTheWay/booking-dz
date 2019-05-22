@@ -58,6 +58,7 @@ class ResultList extends Component {
                         destinationCity = {result.destinationCity}
                         hotel = {result.hotel}
                         price = {result.price}
+                        image = {result.hotelImage}
                         />
                 })}
 
