@@ -1,7 +1,7 @@
 .Result {
     display: flex;
     flex-direction: row;
-    height: 194px;
+    height: 280px;
     width: 95%;
     margin-top: 2%;
     margin-left: 2.5%;
@@ -9,14 +9,19 @@
     resize: none;
 }
 
+div.FlyingCompanyColumn > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .img {
     flex:1
 }
 .FlyingCompanyColumn {
-    alignItems:'center';
+    alignItems:center;
     flex-direction: column;
     background-color: burlywood;
-    width: 30%;
+    width: 60%;
     background-size: cover;
 }
 
@@ -24,24 +29,99 @@
     display: flex;
     flex-direction: column;
     background-color: aquamarine;
-    width: 50%;
+    width: 40%;
+}
+
+.AgencyColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: mediumseagreen;
+    flex: 0.75;
+}
+
+.AgencyName{
+    margin-left: 10px;
 }
 
 .PriceColumn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: white;
+    flex: 0.75;
+}
+
+.PriceText{
+    margin-right: 10px;
+}
+
+.PriceDetails{
+    font-weight: lighter;
+    font-size: small;
+    color: grey;
+    margin-right: 10px;
+}
+
+.HotelInfo {
+    display: flex;
     flex-direction: column;
-    background-color: blueviolet;
-    width: 20%;
+    flex: 3;
+}
+
+.HotelName{
+    display: flex;
+    flex-direction: column;
+    flex: 0.75;
+}
+
+.HotelStars{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 0.75;
+    margin-top: -10px;
+}
+
+.HotelOptions{
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.OfferDuration{
+    font-weight: bold;
+}
+.OfferDetails{
+    display: flex;
+    flex: 0.75;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: grey;
+}
+
+.buttonOfferDetails {
+    margin-right: 10px;
+    height: 30px;
+    width: 35%;
+    border: 1px;
+    border-radius: 5px;
+    background-color: green;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+
+}
+
+.checked {
+    color: orange;
 }
 
 .CityInfo {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-
-.HotelInfo {
-    display: flex;
-    margin-left: 15px;
-    justify-content: flex-start;
 }
