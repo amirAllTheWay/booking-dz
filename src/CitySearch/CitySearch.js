@@ -4,11 +4,12 @@ import Select from 'react-select';
 
 
 const options = [
-    { value: 'alger', label: 'Alger' },
-    { value: 'oran', label: 'Oran' },
-    { value: 'sétif', label: 'Sétif' },
-    { value: 'constantine', label: 'Constantine' },
-    { value: 'paris', label: 'Paris' },
+    { value: 'Alger', label: 'Alger' },
+    { value: 'Oran', label: 'Oran' },
+    { value: 'Sétif', label: 'Sétif' },
+    { value: 'Constantine', label: 'Constantine' },
+    { value: 'Paris', label: 'Paris' },
+    { value: 'Rome', label: 'Rome' },
     { value: 'istanbul', label: 'Istanbul' }
 ];
 
@@ -21,7 +22,7 @@ class CitySearch extends Component {
 
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
-        console.log(`Option selected:`, selectedOption);
+        this.props.onCitySelected(selectedOption);
     }
 
     render() {

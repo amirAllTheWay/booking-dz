@@ -29,6 +29,14 @@ class ResultHeader extends Component {
         };
     }
 
+    departureCitySelected = (departureCity) => {
+        console.log("departureCitySelected: ", departureCity);
+    }
+
+    destinationCitySelected = (destinationCity) => {
+        console.log("destinationCitySelected: ", destinationCity);
+    }
+
     render() {
 
         let selectedFilter = null;
@@ -39,8 +47,8 @@ class ResultHeader extends Component {
         {
             selectedFilter = (
                 <div className="Filters">
-                    <CitySearch searchTitle="Ville de départ"/>
-                    <CitySearch searchTitle="Destination"/>
+                    <CitySearch searchTitle="Ville de départ" onCitySelected={this.departureCitySelected}/>
+                    <CitySearch searchTitle="Destination" onCitySelected={this.destinationCitySelected}/>
 
                     <DateSearch dateTitle="Date de départ"/>
                     <DateSearch dateTitle="Date de retour"/>

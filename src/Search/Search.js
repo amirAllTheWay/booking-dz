@@ -12,8 +12,6 @@ import  '../Offers/Offer.css';
 import '../Filters/Filters.css';
 import CitySearch from "../CitySearch/CitySearch";
 import DateSearch from "../DateSearch/DateSearch";
-import SearchButton from "../SearchButton/SearchButton";
-
 
 class Search extends Component {
 
@@ -25,10 +23,23 @@ class Search extends Component {
                 {key: "off2", name: "Omra", isSelected: false},
                 {key: "off3", name: "Hadj", isSelected: false}
             ],
+            departureCity: null,
+            destinationCity: null,
+            departureDate: null,
+            returnDate: null,
             selectedOffedIndex: 0
         };
     }
 
+
+    departureCitySelected = (departureCity) => {
+        console.log("departureCitySelected: value: ", departureCity.value);
+        this.setState({departureCity: departureCity.value}, () => {console.log("departureCitySelected: state: ", this.state.departureCity);});
+    }
+
+    destinationCitySelected = (destinationCity) => {
+        this.setState({destinationCity: destinationCity.value},() => {console.log("destinationCitySelected:: state: ", this.state.destinationCity);});
+    }
 
     handleOfferClicked = (offerId) => {
         console.log("handleOfferClicked: ", offerId);
@@ -44,7 +55,6 @@ class Search extends Component {
         newOffers[offerId] = selectedOffer;
         newOffers[this.state.selectedOffedIndex] = previouslySelectedOffer;
 
-
         this.setState({offers: newOffers,  selectedOffedIndex: offerId}, () => {console.log("handleOfferClicked 2: ", this.state.selectedOffedIndex);});
     }
 
@@ -58,13 +68,18 @@ class Search extends Component {
         {
             selectedFilter = (
                 <div className="Filters">
-                    <CitySearch searchTitle="Ville de départ"/>
-                    <CitySearch searchTitle="Destination"/>
+                    <CitySearch searchTitle="Ville de départ" onCitySelected={this.departureCitySelected}/>
+                    <CitySearch searchTitle="Destination" onCitySelected={this.destinationCitySelected}/>
 
                     <DateSearch dateTitle="Date de départ"/>
                     <DateSearch dateTitle="Date de retour"/>
 
-                    <SearchButton clicked={this.props.onSearchButtonClicked}/>
+
+                    <div className="SearchButton">
+
+                        <button className="button" onClick={() => this.props.onSearchButtonClicked({departureCity: this.state.departureCity, destinationCity: this.state.destinationCity})}>Rechercher</button>
+
+                    </div>
                 </div>
             );
 
@@ -104,10 +119,14 @@ const mapDispatchToProps = dispatch => {
     // TODO new research request need to pass selected cities and selected dates
     // TODO This data should be stored in a Form
     // TODO search button should be deactivated since data not inserted
+
+    //let  researchParams  = {departureCity: this.state.departureCity, destinationCity: this.state.destinationCity};
     return {
-        onSearchButtonClicked: () => {
+        onSearchButtonClicked: (researchParams) => {
+            console.log(" ***** onSearchButtonClicked: ", researchParams.departureCity);
             dispatch(actionCreators.searchButtonClicked());
-            dispatch(actionCreators.newResearchRequest("Amir"));
+
+            dispatch(actionCreators.newResearchRequest(researchParams));
         }
     };
 };

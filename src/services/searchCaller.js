@@ -8,7 +8,7 @@ const notifySearchButtonClicked = (payload, response) => {
         results: [
             {
                 flyingCompany: "Air Algérie",
-                flyingCompanyLogo: "./logo_air_algerie.jpg",
+                flyingCompanyLogo: "",
                 departureCity: "Alger",
                 destinationCity: "Rome",
                 hotel: "Hotel Hilton",
@@ -56,10 +56,15 @@ const notifySearchButtonClicked = (payload, response) => {
 
 export const getTourismResults = (payload) => {
 
+    //"http://localhost:8000/getOffers/getOfferByCity/" + payload.departureCity + "/" + payload.destinationCity
+    let route = '';
 
-    console.log("getTourismResults");
+    route = route.concat('http://localhost:8000/getOffers/getOfferByCity/', payload.departureCity, '/', payload.destinationCity);
+    console.log('*** route', route);
+
+    //"http://localhost:8000/getOffers/allTourismOffers"
     return dispatch => {
-        axios.get("http://localhost:8000/getOffers/allTourismOffers").then(
+        axios.get(route).then(
             response => dispatch(notifySearchButtonClicked(payload, response)),
             (error) => { console.log("ERROR: ", error.toString()) }
         )
