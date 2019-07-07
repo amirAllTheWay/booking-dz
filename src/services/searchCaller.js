@@ -1,55 +1,34 @@
 import axios from 'axios'
 
 
-const notifySearchButtonClicked = (payload, response) => {
-
-    let researchResults = {
-        researchType: "tourism",
-        results: [
-            {
-                flyingCompany: "Air Algérie",
-                flyingCompanyLogo: "",
-                departureCity: "Alger",
-                destinationCity: "Rome",
-                hotel: "Hotel Hilton",
-                price: "380€"
-            },
-            {
-                flyingCompany: "Air France",
-                departureCity: "Paris",
-                destinationCity: "New York",
-                hotel: "Hotel Sofitel",
-                price: "550€"
-            },
-            {
-                flyingCompany: "Alitalia",
-                departureCity: "Alger",
-                destinationCity: "Rome",
-                hotel: "Hotel El Mourradia",
-                price: "180€"
-            },
-            {
-                flyingCompany: "Vueling",
-                departureCity: "Alger",
-                destinationCity: "Prague",
-                hotel: "Hotel Marriott",
-                price: "475€"
-            }
-        ]
-    };
-
+const notifySearchButtonClicked = (response) => {
 
     let serverTourismResults = {
         researchType: "tourism",
         results: response.data.tourismOffers
     };
 
-    console.log("getTourismResults: ", payload, " response: ", serverTourismResults, " researchResults: ", researchResults);
+    console.log(" ++++ getTourismResults: response: ", serverTourismResults);
 
 
     return {
         type: "RESEARCH_RESPONSE_RECEIVED",
         payload: serverTourismResults
+    };
+};
+
+const onyMainPage = (response) => {
+
+    let hotTourismOffers = {
+        researchType: "tourism",
+        results: response.data.tourismOffers
+    };
+
+    console.log(" ++++ getTourismResults: response: ", hotTourismOffers);
+
+    return {
+        type: "MAIN_PAGE_LAUNCHED",
+        payload: hotTourismOffers
     };
 };
 
@@ -59,14 +38,33 @@ export const getTourismResults = (payload) => {
     //"http://localhost:8000/getOffers/getOfferByCity/" + payload.departureCity + "/" + payload.destinationCity
     let route = '';
 
-    route = route.concat('http://localhost:8000/getOffers/getOfferByCity/', payload.departureCity, '/', payload.destinationCity);
-    console.log('*** route', route);
+    if(payload.departureCity == null  || payload.destinationCity == null) {
+        route = "http://localhost:8000/getOffers/allTourismOffers";
+    }
+    else{
+        route = route.concat('http://localhost:8000/getOffers/getOfferByCity/', payload.departureCity, '/', payload.destinationCity);
+    }
+
+    console.log('*** getTourismResults route', route);
 
     //"http://localhost:8000/getOffers/allTourismOffers"
     return dispatch => {
         axios.get(route).then(
-            response => dispatch(notifySearchButtonClicked(payload, response)),
+            response => dispatch(notifySearchButtonClicked(response)),
             (error) => { console.log("ERROR: ", error.toString()) }
+        )
+
+    };
+};
+
+export const getHotTourismOffers = () => {
+
+    let route = 'http://localhost:8000/getHotTourismOffers'
+
+    return dispatch => {
+        axios.get(route).then(
+            response => dispatch(onyMainPage(response)),
+            (error) => { console.log("ERROR hot tourism offers: ", error.toString()) }
         )
 
     };

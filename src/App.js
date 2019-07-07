@@ -3,30 +3,29 @@ import React, { Component } from 'react';
 import './App.css';
 
 import  { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 
 import Toolbar from './Toolbar/Toolbar';
 import Main from './Main/Main';
 import ResultBody from "./Result/ResultBody/ResultBody";
+import OfferDetails from "./OfferDetails/OfferDetails";
+
 
 class App extends Component {
 
   render() {
 
-      let selectedView = null;
-
-      if(this.props.isResearchButtonClicked === false) {
-          selectedView = (
-              <Main/>
-          );
-      } else {
-          selectedView = (
-              <ResultBody/>
-          );
-      }
     return (
       <div className="App">
-        <Toolbar/>
-          {selectedView}
+
+          <Toolbar/>
+          <Switch>
+              <Route path="/"  exact component={Main} />
+              <Route path="/results"  exact component={ResultBody} />
+              <Route path="/details"  exact component={OfferDetails} />
+              <Route path="/tourismResults"  exact component={ResultBody} />
+          </Switch>
+
       </div>
     );
   }
@@ -34,7 +33,9 @@ class App extends Component {
 
 const mapStateToProps = state => {
     return {
-        isResearchButtonClicked: state.researchButtonPressed
+        isResearchButtonClicked: state.researchButtonPressed,
+        isOfferDetailsClicked: state.offerDetailsClicked,
+        offerDetailsId: state.offerDetailsId
     }
 
 };

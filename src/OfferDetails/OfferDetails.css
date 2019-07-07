@@ -1,0 +1,104 @@
+.pageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+    height: 1000px;
+}
+
+.offerDetails{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    height: 60%;
+    width: 60%;
+    background-color: gold;
+}
+
+.hotelNameContainer{
+    display: flex;
+    height: 10%;
+    background-color: #4CAF50;
+}
+
+.hotelName{
+    height: 100%;
+}
+
+.HotelDetailsRecap{
+    display: flex;
+    flex-direction: row;
+    height: 75%;
+    background-color: lightcoral;
+}
+
+.HotelPhotosColumn{
+    alignItems:center;
+    flex-direction: column;
+    background-color: burlywood;
+    width: 65%;
+    background-size: cover;
+}
+
+.StayDetailsColumn{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    background-color: cornflowerblue;
+}
+
+.hotelOptions{
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.offerDuration{
+    justify-content: flex-start;
+    display: flex;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.TravelAgencyRow{
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    background-color: #61dafb;
+}
+
+.agencyNameAddress{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70%;
+    background-color: darkseagreen;
+}
+
+.agencyName{
+    display: flex;
+    margin-left: 10px;
+    flex: 1;
+}
+
+.agencyAddress{
+    display: flex;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.agencyPhoneNumber{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    background-color: antiquewhite;
+}
+
+.override {
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+}

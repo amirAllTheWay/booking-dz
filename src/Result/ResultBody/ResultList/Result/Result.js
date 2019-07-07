@@ -2,12 +2,13 @@ import {Component} from "react";
 import React from "react";
 
 import './Result.css';
+import * as actionCreators from "../../../../store/actions/actions";
+import {connect} from "react-redux";
+import { withRouter } from 'react-router-dom';
 
 class Result extends Component {
 
     render() {
-
-
 
         return (
             <div className="Result">
@@ -42,19 +43,48 @@ class Result extends Component {
                             <li>All inclusive 24h/24</li>
                             <li>Chambres aves vue</li>
                         </ul>
-
                     </div>
 
                     <div className="OfferDetails">
-                        <button className="buttonOfferDetails">Voir</button>
+                        <button className="buttonOfferDetails" onClick={() => this.props.offerDetailsButtonClicked(this.props, this.props.index)}>Voir</button>
                     </div>
 
                 </div>
-
 
             </div>
         );
     }
 }
 
-export default Result;
+
+const mapDispatchToProps = dispatch => {
+
+    return {
+        offerDetailsButtonClicked: (props, key) => {
+            console.log("Result : ", key);
+            dispatch(actionCreators.offerDetailsButtonClicked(0));
+
+
+            props.history.push({
+                pathname: "/details",
+                search: '?query=abc',
+                state: { offer:
+                        {
+                            flyingCompany: props.flyingCompany,
+                            departureCity: props.departureCity,
+                            destinationCity: props.destinationCity,
+                            hotel: props.hotel,
+                            price: props.price,
+                            hotelImage: props.image,
+                            travelAgency: props.agency,
+                            travelDuration: props.duration,
+                            hotelStars: props.hotelStars
+                        }
+                }
+            });
+        }
+    };
+
+};
+
+export default connect(null, mapDispatchToProps)(withRouter(Result));

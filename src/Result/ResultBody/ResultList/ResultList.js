@@ -7,19 +7,16 @@ import './ResultList.css';
 import Result from "./Result/Result";
 
 
-
 class ResultList extends Component {
 
-
-
     render() {
-
         return (
             <div className="ResultList">
 
-                {this.props.tourismResults.map((result, index) => {
+                {this.props.filteredTourismResults.map((result, index) => {
                     return <Result
                         key = {index}
+                        index = {index}
                         flyingCompany = {result.flyingCompany}
                         departureCity = {result.departureCity}
                         destinationCity = {result.destinationCity}
@@ -28,6 +25,7 @@ class ResultList extends Component {
                         image = {result.hotelImage}
                         agency = {result.travelAgency}
                         duration = {result.travelDuration}
+                        hotalStars = {result.hotalStars}
                         />
                 })}
 
@@ -37,9 +35,10 @@ class ResultList extends Component {
 }
 
 const mapStateToProps = state => {
+    console.log(" **** ResultList state was updated: ", state);
     return {
         researchType: state.researchType,
-        tourismResults: state.tourismResults
+        filteredTourismResults: state.filteredTourismResults
     }
 
 };

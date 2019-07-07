@@ -2,16 +2,18 @@ import {Component} from "react";
 import React from "react";
 
 import  { connect } from 'react-redux';
-import * as actionCreators  from '../store/actions/actions';
+import { withRouter } from 'react-router-dom';
+
+import * as actionCreators  from '../../store/actions/actions';
 
 import './Search.css';
 
-import Offer from "../Offers/Offer";
-import  '../Offers/Offers.css';
-import  '../Offers/Offer.css';
-import '../Filters/Filters.css';
-import CitySearch from "../CitySearch/CitySearch";
-import DateSearch from "../DateSearch/DateSearch";
+import Offer from "../../Offers/Offer";
+import  '../../Offers/Offers.css';
+import  '../../Offers/Offer.css';
+import '../../Filters/Filters.css';
+import CitySearch from "../../CitySearch/CitySearch";
+import DateSearch from "../../DateSearch/DateSearch";
 
 class Search extends Component {
 
@@ -59,6 +61,7 @@ class Search extends Component {
     }
 
     render() {
+        console.log("------- Search props: ", this.props);
 
         let selectedFilter = null;
         //console.log("Filters selected filter: ", this.props.selectedOffedIndex);
@@ -77,7 +80,7 @@ class Search extends Component {
 
                     <div className="SearchButton">
 
-                        <button className="button" onClick={() => this.props.onSearchButtonClicked({departureCity: this.state.departureCity, destinationCity: this.state.destinationCity})}>Rechercher</button>
+                        <button className="button" onClick={() => this.props.onSearchButtonClicked({departureCity: this.state.departureCity, destinationCity: this.state.destinationCity}, this.props)}>Rechercher</button>
 
                     </div>
                 </div>
@@ -122,13 +125,17 @@ const mapDispatchToProps = dispatch => {
 
     //let  researchParams  = {departureCity: this.state.departureCity, destinationCity: this.state.destinationCity};
     return {
-        onSearchButtonClicked: (researchParams) => {
-            console.log(" ***** onSearchButtonClicked: ", researchParams.departureCity);
+        onSearchButtonClicked: (researchParams, property) => {
+            console.log(" ***** onSearchButtonClicked 1: ", property);
+            console.log(" ***** onSearchButtonClicked 2: ", researchParams.departureCity);
+
             dispatch(actionCreators.searchButtonClicked());
 
             dispatch(actionCreators.newResearchRequest(researchParams));
+
+            property.history.push("/tourismResults");
         }
     };
 };
 
-export default connect(null, mapDispatchToProps)(Search);
+export default connect(null, mapDispatchToProps)(withRouter(Search));

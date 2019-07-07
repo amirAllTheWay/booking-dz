@@ -1,35 +1,86 @@
-.ResultFilter {
+.ResultFilterContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 20%;
+    height: 800px;
+    background-color: darksalmon;
+}
+
+.divContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.FilterText{
+    display: flex;
+    height: 50px;
+    width: 90%;
+    background-color: cadetblue;
+}
+
+.FilterContent{
+    display: flex;
     height: 400px;
-    background-color: #61dafb;
+    width: 90%;
+    background-color: grey;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
 }
 
 .PriceFilter{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 70px;
-    width: 90%;
-    background-color: burlywood;
-}
-
-.PriceSlider{
-    display: flex;
     flex-direction: column;
-    align-content: flex-start;
-    height: 20px;
-    width: 70%;
-    background-color: coral;
+    height: 80px;
+    background-color: #4CAF50;
+    width: 100%;
 }
 
 .PriceFilterText{
+    font-weight: bold;
     display: flex;
-    height: 20px;
+    flex: 1.4;
+}
+
+.MinMaxText{
+    font-size: small;
+    display: flex;
+    flex: 1;
+}
+
+.EmptySpaceText{
+    display: flex;
+    flex: 0.8;
+}
+
+.SliderText{
+    display: flex;
+    flex: 2;
+}
+
+
+.DurationFilter{
+    display: flex;
     flex-direction: column;
-    background-color: lightgrey;
+    height: 80px;
+    background-color: brown;
+    width: 100%;
+}
+
+.StarsFilter{
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    background-color: darkseagreen;
+    width: 100%;
+}
+
+.Text{
+    font-weight: bold;
+    background-color: lightcoral;
 }
 
 .OfferDurationFilter{

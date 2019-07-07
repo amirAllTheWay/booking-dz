@@ -6,12 +6,6 @@ import './Offers.css';
 class Offer extends Component {
 
 
-
-    handleOfferClicked() {
-        console.log("handleOfferClicked");
-
-    }
-
     render() {
         let style = "Offer";
         //console.log("this.props.isOfferSelected: ", this.props.isOfferSelected);

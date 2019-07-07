@@ -7,8 +7,8 @@ export const newResearchRequest = (researchParams) => {
     console.log("actions event: ", researchParams);
     // Do the async call, when answer received dispatch an event
     return searchCaller.getTourismResults(researchParams);
-
 };
+
 
 export const notifySearchButtonClicked = () => {
     return {
@@ -26,3 +26,23 @@ export const searchButtonClicked = () => {
     };
 };
 
+export const filterValuesChanged = (filterValues) => {
+
+    return {
+        type: "FILTER_VALUES_CHANGED",
+        payload: filterValues
+    };
+};
+
+export const mainScreenLaunched = () => {
+
+    return searchCaller.getHotTourismOffers();
+};
+
+export const offerDetailsButtonClicked = (offerId) => {
+
+    return {
+        type: "OFFER_DETAILS_CLICKED",
+        payload: offerId
+    };
+};
