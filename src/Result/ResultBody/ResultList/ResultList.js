@@ -26,6 +26,8 @@ class ResultList extends Component {
                         agency = {result.travelAgency}
                         duration = {result.travelDuration}
                         hotalStars = {result.hotalStars}
+                        agencyAddress = {result.agencyAddress}
+                        agencyPhone = {result.agencyPhone}
                         />
                 })}
 

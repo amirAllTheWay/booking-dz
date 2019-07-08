@@ -130,6 +130,7 @@ const reducer  = (state = initialState, action) => {
 
         return {
             ...state,
+            tourismResults: null,
             researchType: action.payload.researchType,
             hotTourismOffers: action.payload
         }

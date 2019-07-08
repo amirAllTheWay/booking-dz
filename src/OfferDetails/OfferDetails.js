@@ -37,10 +37,10 @@ class OfferDetails extends Component {
                     <div className="TravelAgencyRow">
                         <div className="agencyNameAddress">
                             <h2 className="agencyName">{this.props.location.state.offer.travelAgency}</h2>
-                            <h4 className="agencyAddress">Adress de l'agence</h4>
+                            <h4 className="agencyAddress">{this.props.location.state.offer.agencyAddress}</h4>
                         </div>
                         <div className="agencyPhoneNumber">
-                            <h2>03.49.08.67.45</h2>
+                            <h2>{this.props.location.state.offer.agencyPhone}</h2>
                         </div>
 
                     </div>

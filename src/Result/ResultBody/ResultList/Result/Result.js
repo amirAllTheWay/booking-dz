@@ -78,7 +78,9 @@ const mapDispatchToProps = dispatch => {
                             hotelImage: props.image,
                             travelAgency: props.agency,
                             travelDuration: props.duration,
-                            hotelStars: props.hotelStars
+                            hotelStars: props.hotelStars,
+                            agencyAddress: props.agencyAddress,
+                            agencyPhone : props.agencyPhone
                         }
                 }
             });
