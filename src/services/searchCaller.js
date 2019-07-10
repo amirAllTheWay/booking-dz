@@ -39,10 +39,10 @@ export const getTourismResults = (payload) => {
     let route = '';
 
     if(payload.departureCity == null  || payload.destinationCity == null) {
-        route = "http://localhost:8000/getOffers/allTourismOffers";
+        route = "https://sama-djazair.herokuapp.com/getOffers/allTourismOffers";
     }
     else{
-        route = route.concat('http://localhost:8000/getOffers/getOfferByCity/', payload.departureCity, '/', payload.destinationCity);
+        route = route.concat('https://sama-djazair.herokuapp.com/getOffers/getOfferByCity/', payload.departureCity, '/', payload.destinationCity);
     }
 
     console.log('*** getTourismResults route', route);
@@ -59,7 +59,7 @@ export const getTourismResults = (payload) => {
 
 export const getHotTourismOffers = () => {
 
-    let route = 'http://localhost:8000/getHotTourismOffers'
+    let route = 'https://sama-djazair.herokuapp.com/getHotTourismOffers';
 
     return dispatch => {
         axios.get(route).then(

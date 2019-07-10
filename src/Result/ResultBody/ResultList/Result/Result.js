@@ -61,7 +61,7 @@ const mapDispatchToProps = dispatch => {
 
     return {
         offerDetailsButtonClicked: (props, key) => {
-            console.log("Result : ", key);
+            console.log("Result : ", props);
             dispatch(actionCreators.offerDetailsButtonClicked(0));
 
 
