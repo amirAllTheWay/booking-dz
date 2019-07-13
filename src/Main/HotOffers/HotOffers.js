@@ -23,7 +23,7 @@ class HotOffers extends Component {
 
         let selectedView = null;
 
-        if(this.props.hotTourismOffers === undefined || this.props.hotTourismOffers === null || this.props.hotTourismOffers.results === null  || this.props.hotTourismOffers.length === 0) {
+        if(this.props.hotTourismOffers === undefined || this.props.hotTourismOffers === null || this.props.hotTourismOffers.results === null  || this.props.hotTourismOffers.results === undefined) {
 
             console.log(" **** Hot offers NULL");
             selectedView = (
