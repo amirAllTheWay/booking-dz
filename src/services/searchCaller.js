@@ -17,14 +17,14 @@ const notifySearchButtonClicked = (response) => {
     };
 };
 
-const onyMainPage = (response) => {
+const onMainPage = (response) => {
+
+    console.log(" ++++ getHotTourismResults: response: ", response);
 
     let hotTourismOffers = {
         researchType: "tourism",
         results: response.data.tourismOffers
     };
-
-    console.log(" ++++ getTourismResults: response: ", hotTourismOffers);
 
     return {
         type: "MAIN_PAGE_LAUNCHED",
@@ -39,10 +39,10 @@ export const getTourismResults = (payload) => {
     let route = '';
 
     if(payload.departureCity == null  || payload.destinationCity == null) {
-        route = "https://sama-djazair.herokuapp.com/getOffers/allTourismOffers";
+        route = "https://cors-anywhere.herokuapp.com/https://sama-djazair.herokuapp.com/getOffers/allTourismOffers";
     }
     else{
-        route = route.concat('https://sama-djazair.herokuapp.com/getOffers/getOfferByCity/', payload.departureCity, '/', payload.destinationCity);
+        route = route.concat('https://cors-anywhere.herokuapp.com/https://sama-djazair.herokuapp.com/getOffers/getOfferByCity/', payload.departureCity, '/', payload.destinationCity);
     }
 
     console.log('*** getTourismResults route', route);
@@ -59,11 +59,11 @@ export const getTourismResults = (payload) => {
 
 export const getHotTourismOffers = () => {
 
-    let route = 'https://sama-djazair.herokuapp.com/getHotTourismOffers';
+    let route = 'https://cors-anywhere.herokuapp.com/https://sama-djazair.herokuapp.com/getHotTourismOffers';
 
     return dispatch => {
         axios.get(route).then(
-            response => dispatch(onyMainPage(response)),
+            response => dispatch(onMainPage(response)),
             (error) => { console.log("ERROR hot tourism offers: ", error.toString()) }
         )
 

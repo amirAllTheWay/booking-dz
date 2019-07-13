@@ -18,7 +18,6 @@ class App extends Component {
     return (
       <div className="App">
 
-          <Toolbar/>
           <Switch>
               <Route path="/"  exact component={Main} />
               <Route path="/results"  exact component={ResultBody} />
