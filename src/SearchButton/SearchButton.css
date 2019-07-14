@@ -1,19 +1,21 @@
 .SearchButton {
     display: flex;
-    height: 120%;
     width: 15%;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .button {
-    height: 40px;
+    height: 60px;
     width: 100%;
     border: 1px;
     padding: 10px;
     border-radius: 5px;
-    background-color: green;
+    background-color: rgb(233, 90, 84);
     font-weight: bold;
     font-size: small;
     color: white;
+}
 
+.searchButtonText{
+    font-size: 18px;
 }

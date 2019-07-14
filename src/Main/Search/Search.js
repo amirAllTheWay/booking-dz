@@ -70,7 +70,7 @@ class Search extends Component {
         if(this.state.selectedOffedIndex === 0)
         {
             selectedFilter = (
-                <div className="Filters">
+                <div className="SearchFilters">
                     <CitySearch searchTitle="Ville de départ" onCitySelected={this.departureCitySelected}/>
                     <CitySearch searchTitle="Destination" onCitySelected={this.destinationCitySelected}/>
 
@@ -80,7 +80,9 @@ class Search extends Component {
 
                     <div className="SearchButton">
 
-                        <button className="button" onClick={() => this.props.onSearchButtonClicked({departureCity: this.state.departureCity, destinationCity: this.state.destinationCity}, this.props)}>Rechercher</button>
+                        <button className="button" onClick={() => this.props.onSearchButtonClicked({departureCity: this.state.departureCity, destinationCity: this.state.destinationCity}, this.props)}>
+                            <div className="searchButtonText">Rechercher</div>
+                        </button>
 
                     </div>
                 </div>

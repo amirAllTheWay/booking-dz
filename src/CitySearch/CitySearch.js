@@ -35,10 +35,10 @@ class CitySearch extends Component {
                     <h3>{this.props.searchTitle}</h3>
                 </div>
 
-                <Select
-                    onChange={this.handleChange}
-                    value={selectedOption}
-                    options={options}/>
+                    <Select
+                        onChange={this.handleChange}x
+                        value={selectedOption}
+                        options={options}/>
 
             </div>
 

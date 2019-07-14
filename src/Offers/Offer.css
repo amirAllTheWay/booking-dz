@@ -1,17 +1,32 @@
 .Offer {
     height: 100%;
+    width: 220px;
+    font-size: larger;
 
-
-    margin-right: 3px;
-    padding-left: 10px;
     padding-right: 10px;
 }
 
 .OfferClicked {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
+    background-color: white;
+    color: black;
 }
+
 .OfferNotClicked {
     background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+}
+
+.OfferOmraNotClicked {
+    background-color: rgb(112, 172, 244);
+    color: black;
+}
+
+.OfferHadjNotClicked {
+    background-color: rgb(218, 146, 61);
+    color: black;
+}
+
+.OfferTourismNotClicked {
+    background-color: rgb(233, 90, 84);
     color: black;
 }

@@ -1,5 +1,5 @@
 .DateSearch {
-    height: 50%;
+    height: 100%;
     width: 14%;
     display: flex;
     flex-direction: column;
@@ -19,5 +19,5 @@
 .DateTitle {
     font-size: x-small;
     width: fit-content;
-    color: white;
+    color: black;
 }

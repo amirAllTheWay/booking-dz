@@ -53,7 +53,13 @@ class ResultHeader extends Component {
                     <DateSearch dateTitle="Date de départ"/>
                     <DateSearch dateTitle="Date de retour"/>
 
-                    <SearchButton clicked={this.props.onSearchButtonClicked}/>
+                    <div className="SearchButton">
+
+                        <button className="button">
+                            <div className="searchButtonText">Rechercher</div>
+                        </button>
+
+                    </div>
                 </div>
             );
 
