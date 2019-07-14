@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 import './Main.css';
 import HotOffers from "./HotOffers/HotOffers";
+import Toolbar from "../Toolbar/Toolbar";
 import * as actionCreators from "../store/actions/actions";
 import {connect} from "react-redux";
 
@@ -16,7 +17,8 @@ class Main extends Component {
         this.props.onMainScreenLaunched()
 
         return (
-            <div className="Container Main">
+            <div className=" Main">
+                <Toolbar/>
                 <Search/>
                 <HotOffers/>
             </div>

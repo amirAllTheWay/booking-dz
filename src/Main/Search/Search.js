@@ -77,7 +77,6 @@ class Search extends Component {
                     <DateSearch dateTitle="Date de départ"/>
                     <DateSearch dateTitle="Date de retour"/>
 
-
                     <div className="SearchButton">
 
                         <button className="button" onClick={() => this.props.onSearchButtonClicked({departureCity: this.state.departureCity, destinationCity: this.state.destinationCity}, this.props)}>
@@ -100,18 +99,20 @@ class Search extends Component {
 
         return (
             <div className="Search">
-                <div className="Offers">
-                    {this.state.offers.map((offer, index) => {
-                        return <Offer
-                            key = {index}
-                            click={() => this.handleOfferClicked(index)}
-                            offerName={offer.name}
-                            isOfferSelected={offer.isSelected}/>
-                    })}
-                </div>
+                <div className="SearchContainer">
+                    <div className="Offers">
+                        {this.state.offers.map((offer, index) => {
+                            return <Offer
+                                key = {index}
+                                click={() => this.handleOfferClicked(index)}
+                                offerName={offer.name}
+                                isOfferSelected={offer.isSelected}/>
+                        })}
+                    </div>
 
-                <div className="Filters">
-                    {selectedFilter}
+                    <div className="Filters">
+                        {selectedFilter}
+                    </div>
                 </div>
 
             </div>

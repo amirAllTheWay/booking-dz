@@ -1,17 +1,70 @@
 .Toolbar {
-    hight: 56px;
-    width: 100%;
-    position: fixed;
+    display: flex;
+    height: 90px;
+    width: 1000px;
     font-size: xx-large;
-    top: 0;
-    left: 0;
-    background-color: lightsteelblue;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    box-sizing: border-box;
-    z-index: 90;
 }
 
 
+.LogoButton {
+    height: 80%;
+    width: 220px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px;
+    border-radius: 5px;
+    color: White;
+    font-size: larger;
+    font-weight: bold;
+    background-color: Transparent;
+}
+
+.ToolbarLeft{
+    display: flex;
+    flex-direction: row;
+    width: 380px;
+}
+
+.LoginButton{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 130px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px;
+    border-radius: 5px;
+    background-color: rgb(112,172,244);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+.HadjButton{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 100px;
+    padding: 10px;
+    margin-right: 5px;
+    border: 1px;
+    background-color: Transparent;
+    color: white;
+    font-size: large;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+}
+
+.ButtonClicked{
+    color: rgb(112, 172, 244);
+    border-bottom: 2px solid;
+}
+
+.ButtonNotClicked{
+    color: white;
+}

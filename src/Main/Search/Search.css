@@ -1,11 +1,19 @@
 .Search {
-    height: 50%;
+    height: 30%;
     width: 1000px;
     display: flex;
+
+    overflow-x: scroll;
+}
+
+.SearchContainer{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: scroll;
 }
 
 .SearchFilters {
