@@ -46,7 +46,7 @@ class ResultHeader extends Component {
         if(this.state.selectedOffedIndex === 0)
         {
             selectedFilter = (
-                <div className="Filters">
+                <div className="SelectedFilters">
                     <CitySearch searchTitle="Ville de départ" onCitySelected={this.departureCitySelected}/>
                     <CitySearch searchTitle="Destination" onCitySelected={this.destinationCitySelected}/>
 
@@ -75,18 +75,22 @@ class ResultHeader extends Component {
 
         return (
             <div className="ResultHeader">
-                <div className="Offers RHContainer">
-                    {this.state.offers.map((offer, index) => {
-                        return <Offer
-                            key = {index}
-                            click={() => this.handleOfferClicked(index)}
-                            offerName={offer.name}
-                            isOfferSelected={offer.isSelected}/>
-                    })}
-                </div>
+                <div className="RHSearchContainer">
 
-                <div className="Filters RHContainer">
-                    {selectedFilter}
+                    <div className="RHOffers">
+                        {this.state.offers.map((offer, index) => {
+                            return <Offer
+                                key = {index}
+                                click={() => this.handleOfferClicked(index)}
+                                offerName={offer.name}
+                                isOfferSelected={offer.isSelected}/>
+                        })}
+                    </div>
+
+                    <div className="RHFilters">
+                        {selectedFilter}
+                    </div>
+
                 </div>
 
             </div>

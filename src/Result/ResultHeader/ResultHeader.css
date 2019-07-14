@@ -1,7 +1,6 @@
 .ResultHeader {
     background-image: url('main_background_image.jpg');
     height: 400px;
-
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -9,6 +8,27 @@
     align-items: center;
 }
 
-.RHContainer {
-    width: 70%;
+.RHSearchContainer{
+    display: flex;
+    width: 1000px;
+    height: 40%;
+    flex-direction: column;
+}
+
+.RHOffers {
+    height: 35%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+.RHFilters{
+    height: 65%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
 }
