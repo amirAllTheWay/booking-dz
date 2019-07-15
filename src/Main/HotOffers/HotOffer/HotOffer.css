@@ -1,12 +1,12 @@
 .HotOffer {
-    height: 80%;
+    height: 90%;
     width: 400px;
     background-size: cover;
     position: relative;
     margin-left: 2%;
     resize: none;
     display: inline-block;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .hotOfferImageContainer{
