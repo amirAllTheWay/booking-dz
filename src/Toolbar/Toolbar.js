@@ -11,8 +11,10 @@ class Toolbar extends Component {
         this.state = {
             toolbarButtons: [
                 {key: 0, name: "Home", isSelected: true, style: "HadjButton ButtonClicked"},
-                {key: 1, name: "Hadj", isSelected: false, style: "HadjButton ButtonNotClicked"},
-                {key: 2, name: "Omra", isSelected: false, style: "HadjButton ButtonNotClicked"}
+                {key: 1, name: "Tourisme", isSelected: false, style: "HadjButton ButtonNotClicked"},
+                {key: 2, name: "Hadj", isSelected: false, style: "HadjButton ButtonNotClicked"},
+                {key: 3, name: "Omra", isSelected: false, style: "HadjButton ButtonNotClicked"}
+
             ]
         };
     }
@@ -21,7 +23,7 @@ class Toolbar extends Component {
         console.log("Button clicked");
 
         let btnsState = this.state.toolbarButtons;
-        for(let i =0; i <3; i++){
+        for(let i =0; i <4; i++){
             if(btnsState[i].key === key){
                 btnsState[i].isSelected = true;
                 btnsState[i].style = "HadjButton ButtonClicked";
@@ -45,6 +47,8 @@ class Toolbar extends Component {
                     <button className={this.state.toolbarButtons[1].style} onClick={() =>this.updateToolbarState(this.state.toolbarButtons[1].key)}>{this.state.toolbarButtons[1].name}</button>
 
                     <button className={this.state.toolbarButtons[2].style} onClick={() =>this.updateToolbarState(this.state.toolbarButtons[2].key)}>{this.state.toolbarButtons[2].name}</button>
+
+                    <button className={this.state.toolbarButtons[3].style} onClick={() =>this.updateToolbarState(this.state.toolbarButtons[3].key)}>{this.state.toolbarButtons[3].name}</button>
 
                     <button className="LoginButton">Se connecter</button>
                 </div>

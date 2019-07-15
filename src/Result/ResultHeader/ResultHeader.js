@@ -13,6 +13,7 @@ import '../../Filters/Filters.css';
 import CitySearch from "../../CitySearch/CitySearch";
 import DateSearch from "../../DateSearch/DateSearch";
 import SearchButton from "../../SearchButton/SearchButton";
+import Toolbar from "../../Toolbar/Toolbar";
 
 
 class ResultHeader extends Component {
@@ -75,6 +76,8 @@ class ResultHeader extends Component {
 
         return (
             <div className="ResultHeader">
+                <Toolbar/>
+
                 <div className="RHSearchContainer">
 
                     <div className="RHOffers">
