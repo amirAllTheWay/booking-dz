@@ -25,7 +25,7 @@
 .ToolbarLeft{
     display: flex;
     flex-direction: row;
-    width: 380px;
+    width: 450px;
 }
 
 .LoginButton{
@@ -61,7 +61,7 @@
 }
 
 .ButtonClicked{
-    color: rgb(112, 172, 244);
+    color: royalblue;
     border-bottom: 2px solid;
 }
 
