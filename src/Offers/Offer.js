@@ -2,6 +2,7 @@ import {Component} from "react";
 import React from "react";
 
 import './Offers.css';
+import './Offer.css';
 
 class Offer extends Component {
 

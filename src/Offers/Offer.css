@@ -1,9 +1,14 @@
 .Offer {
     height: 100%;
     width: 220px;
-    font-size: larger;
-
     padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: large;
+    align-content: center;
+    background-color: #61dafb;
+
 }
 
 .OfferClicked {
@@ -29,4 +34,8 @@
 .OfferTourismNotClicked {
     background-color: rgb(233, 90, 84);
     color: black;
+}
+
+.OfferText{
+
 }
