@@ -14,11 +14,10 @@ class Main extends Component {
 
     render() {
         // Ask for hot offers on launch
-        this.props.onMainScreenLaunched()
+        this.props.onMainScreenLaunched();
 
         return (
             <div className=" Main">
-                <Toolbar/>
                 <Search/>
                 <HotOffers/>
             </div>

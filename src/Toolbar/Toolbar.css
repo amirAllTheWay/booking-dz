@@ -1,16 +1,17 @@
 .Toolbar {
     display: flex;
-    height: 90px;
+    height: 150px;
     width: 1000px;
     font-size: xx-large;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
 
 .LogoButton {
-    height: 80%;
+    height: 69px;
     width: 220px;
     padding: 10px;
     margin-right: 10px;
@@ -20,6 +21,9 @@
     font-size: larger;
     font-weight: bold;
     background-color: Transparent;
+    background-size: 100%;
+    background-image: url('../resources/images/logo_white.png');
+
 }
 
 .ToolbarLeft{

@@ -2,7 +2,8 @@ import React from 'react';
 import {Component} from "react";
 
 import './Toolbar.css';
-
+import {connect} from "react-redux";
+import { withRouter } from 'react-router-dom';
 
 class Toolbar extends Component {
 
@@ -19,8 +20,7 @@ class Toolbar extends Component {
         };
     }
 
-    updateToolbarState = (key) => {
-        console.log("Button clicked");
+    updateToolbarState = (key, props) => {
 
         let btnsState = this.state.toolbarButtons;
         for(let i =0; i <4; i++){
@@ -36,19 +36,38 @@ class Toolbar extends Component {
         this.setState({toolbarButtons: btnsState}, () => {console.log("updateToolbarState: ", this.state);});
     }
 
+    onToolbarTourismButtonClicked =  (btnKey, property) => {
+        this.updateToolbarState(btnKey);
+
+
+        if (btnKey === 0) {
+            property.history.push("/");
+        }else if(btnKey === 1){
+            property.history.push("/tourismPage");
+        }
+    }
+
     render() {
         return(
             <header className="Toolbar">
-                <button className="LogoButton">Mr Siya7a</button>
+                <button className="LogoButton"></button>
 
                 <div className="ToolbarLeft">
-                    <button className={this.state.toolbarButtons[0].style} onClick={() =>this.updateToolbarState(this.state.toolbarButtons[0].key)}>{this.state.toolbarButtons[0].name}</button>
+                    <button className={this.state.toolbarButtons[0].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[0].key, this.props)}>
+                        {this.state.toolbarButtons[0].name}
+                    </button>
 
-                    <button className={this.state.toolbarButtons[1].style} onClick={() =>this.updateToolbarState(this.state.toolbarButtons[1].key)}>{this.state.toolbarButtons[1].name}</button>
+                    <button className={this.state.toolbarButtons[1].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[1].key, this.props)}>
+                        {this.state.toolbarButtons[1].name}
+                    </button>
 
-                    <button className={this.state.toolbarButtons[2].style} onClick={() =>this.updateToolbarState(this.state.toolbarButtons[2].key)}>{this.state.toolbarButtons[2].name}</button>
+                    <button className={this.state.toolbarButtons[2].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[2].key, this.props)}>
+                        {this.state.toolbarButtons[2].name}
+                    </button>
 
-                    <button className={this.state.toolbarButtons[3].style} onClick={() =>this.updateToolbarState(this.state.toolbarButtons[3].key)}>{this.state.toolbarButtons[3].name}</button>
+                    <button className={this.state.toolbarButtons[3].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[3].key, this.props)}>
+                        {this.state.toolbarButtons[3].name}
+                    </button>
 
                     <button className="LoginButton">Se connecter</button>
                 </div>
@@ -60,4 +79,4 @@ class Toolbar extends Component {
 
 
 
-export default Toolbar;
+export default withRouter(Toolbar);

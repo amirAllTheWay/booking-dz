@@ -1,6 +1,6 @@
 .Main {
-    background-image: url('main_background_image.jpg');
-    height: 1000px;
+    background-image: url('../resources/images/main_background_image_bis.png');
+    height: 850px;
     background-size: cover;
     display: flex;
     flex-direction: column;

@@ -1,0 +1,8 @@
+.TourismFilter {
+    height: 100px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+}

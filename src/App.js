@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 
 import  { connect } from 'react-redux';
@@ -9,6 +8,7 @@ import Toolbar from './Toolbar/Toolbar';
 import Main from './Main/Main';
 import ResultBody from "./Result/ResultBody/ResultBody";
 import OfferDetails from "./OfferDetails/OfferDetails";
+import TourismFilterPage from "./TourismFilterPage/TourismFilterPage";
 
 
 class App extends Component {
@@ -17,12 +17,16 @@ class App extends Component {
 
     return (
       <div className="App">
+          <div className="ToolbarContainer">
+              <Toolbar/>
+          </div>
 
           <Switch>
               <Route path="/"  exact component={Main} />
               <Route path="/results"  exact component={ResultBody} />
               <Route path="/details"  exact component={OfferDetails} />
               <Route path="/tourismResults"  exact component={ResultBody} />
+              <Route path="/tourismPage"  exact component={TourismFilterPage} />
           </Switch>
 
       </div>

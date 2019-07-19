@@ -1,0 +1,23 @@
+.TourismFilterPage{
+    background-image: url('../resources/images/main_background_image.jpg');
+    height: 850px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PageMessageContainer{
+    display: flex;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+
+.TourismFilterPageMessage{
+    font-size: 45px;
+}
+
+.TourismFilterContainer{
+    display: flex;
+}
