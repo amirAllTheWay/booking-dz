@@ -23,7 +23,10 @@ class Search extends Component {
             offers: [
                 {key: "off1", name: "Tourisme", isSelected: true},
                 {key: "off2", name: "Omra", isSelected: false},
-                {key: "off3", name: "Hadj", isSelected: false}
+                {key: "off3", name: "Hadj", isSelected: false},
+                {key: "off4", name: "Voyages Organisés", isSelected: false},
+                {key: "off5", name: "Voyages Linguistiques", isSelected: false},
+                {key: "off6", name: "Visa", isSelected: false}
             ],
             departureCity: null,
             destinationCity: null,
@@ -44,8 +47,6 @@ class Search extends Component {
     }
 
     handleOfferClicked = (offerId) => {
-        console.log("handleOfferClicked: ", offerId);
-
         const previouslySelectedOffer = {...this.state.offers[this.state.selectedOffedIndex]};
         previouslySelectedOffer.isSelected = false;
 
@@ -57,12 +58,10 @@ class Search extends Component {
         newOffers[offerId] = selectedOffer;
         newOffers[this.state.selectedOffedIndex] = previouslySelectedOffer;
 
-        this.setState({offers: newOffers,  selectedOffedIndex: offerId}, () => {console.log("handleOfferClicked 2: ", this.state.selectedOffedIndex);});
+        this.setState({offers: newOffers,  selectedOffedIndex: offerId});
     }
 
     render() {
-        console.log("------- Search props: ", this.props);
-
         let selectedFilter = null;
         //console.log("Filters selected filter: ", this.props.selectedOffedIndex);
 
@@ -86,7 +85,6 @@ class Search extends Component {
                     </div>
                 </div>
             );
-
         }
         else if(this.state.selectedOffedIndex === 1)
         {
@@ -104,6 +102,7 @@ class Search extends Component {
                         {this.state.offers.map((offer, index) => {
                             return <Offer
                                 key = {index}
+                                offerKey = {offer.key}
                                 click={() => this.handleOfferClicked(index)}
                                 offerName={offer.name}
                                 isOfferSelected={offer.isSelected}/>

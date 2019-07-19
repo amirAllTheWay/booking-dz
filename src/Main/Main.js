@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 
 import './Main.css';
 import HotOffers from "./HotOffers/HotOffers";
-import Toolbar from "../Toolbar/Toolbar";
 import * as actionCreators from "../store/actions/actions";
 import {connect} from "react-redux";
 
