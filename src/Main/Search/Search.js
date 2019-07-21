@@ -21,12 +21,12 @@ class Search extends Component {
         super(props);
         this.state = {
             offers: [
-                {key: "off1", name: "Tourisme", isSelected: true},
-                {key: "off2", name: "Omra", isSelected: false},
-                {key: "off3", name: "Hadj", isSelected: false},
-                {key: "off4", name: "Voyages Organisés", isSelected: false},
-                {key: "off5", name: "Voyages Linguistiques", isSelected: false},
-                {key: "off6", name: "Visa", isSelected: false}
+                {key: "off1", name: "Voyages à l'étranger", isSelected: true},
+                {key: "off2", name: "Voyages en Algérie", isSelected: false},
+                {key: "off3", name: "Voyages linguistiques", isSelected: false},
+                {key: "off4", name: "Omra", isSelected: false},
+                {key: "off5", name: "Visa", isSelected: false},
+                {key: "off6", name: "Promo", isSelected: false}
             ],
             departureCity: null,
             destinationCity: null,
