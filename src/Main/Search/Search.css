@@ -2,8 +2,6 @@
     height: 30%;
     width: 1200px;
     display: flex;
-
-    overflow-x: scroll;
 }
 
 .SearchContainer{

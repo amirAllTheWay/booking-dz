@@ -7,6 +7,7 @@
     resize: none;
     display: inline-block;
     margin-top: 20px;
+    border-radius: 15px;
 }
 
 .hotOfferImageContainer{
@@ -21,6 +22,7 @@
     top: 0px;
     left: 10px;
     font-size: x-large;
+
 }
 
 .duration{
