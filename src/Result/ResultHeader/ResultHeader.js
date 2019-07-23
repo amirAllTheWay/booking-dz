@@ -76,19 +76,7 @@ class ResultHeader extends Component {
 
         return (
             <div className="ResultHeader">
-                <Toolbar/>
-
                 <div className="RHSearchContainer">
-
-                    <div className="RHOffers">
-                        {this.state.offers.map((offer, index) => {
-                            return <Offer
-                                key = {index}
-                                click={() => this.handleOfferClicked(index)}
-                                offerName={offer.name}
-                                isOfferSelected={offer.isSelected}/>
-                        })}
-                    </div>
 
                     <div className="RHFilters">
                         {selectedFilter}
