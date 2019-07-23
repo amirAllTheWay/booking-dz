@@ -28,9 +28,20 @@
 .ToolbarLeft{
     display: flex;
     flex-direction: row;
-    width: 500px;
+    width: 600px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+.TabsContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
+.LoginButtonContainer{
+    margin-top: 15px;
+}
 .LoginButton{
     display: flex;
     flex-direction: row;
@@ -56,7 +67,8 @@
     width: 100px;
     padding: 10px;
     margin-right: 5px;
-    border: 1px;
+    border: none;
+    outline:none;
     background-color: Transparent;
     color: white;
     font-size: 23px;

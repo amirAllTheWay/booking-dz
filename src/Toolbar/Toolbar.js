@@ -53,23 +53,28 @@ class Toolbar extends Component {
                 <button className="LogoButton"></button>
 
                 <div className="ToolbarLeft">
-                    <button className={this.state.toolbarButtons[0].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[0].key, this.props)}>
-                        {this.state.toolbarButtons[0].name}
-                    </button>
+                    <div className="TabsContainer">
+                        <button className={this.state.toolbarButtons[0].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[0].key, this.props)}>
+                            {this.state.toolbarButtons[0].name}
+                        </button>
 
-                    <button className={this.state.toolbarButtons[1].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[1].key, this.props)}>
-                        {this.state.toolbarButtons[1].name}
-                    </button>
+                        <button className={this.state.toolbarButtons[1].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[1].key, this.props)}>
+                            {this.state.toolbarButtons[1].name}
+                        </button>
 
-                    <button className={this.state.toolbarButtons[2].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[2].key, this.props)}>
-                        {this.state.toolbarButtons[2].name}
-                    </button>
+                        <button className={this.state.toolbarButtons[2].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[2].key, this.props)}>
+                            {this.state.toolbarButtons[2].name}
+                        </button>
 
-                    <button className={this.state.toolbarButtons[3].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[3].key, this.props)}>
-                        {this.state.toolbarButtons[3].name}
-                    </button>
+                        <button className={this.state.toolbarButtons[3].style} onClick={() =>this.onToolbarTourismButtonClicked(this.state.toolbarButtons[3].key, this.props)}>
+                            {this.state.toolbarButtons[3].name}
+                        </button>
+                    </div>
 
-                    <button className="LoginButton">Se connecter</button>
+                    <div className="LoginButtonContainer">
+                        <button className="LoginButton">Se connecter</button>
+                    </div>
+
                 </div>
 
             </header>
