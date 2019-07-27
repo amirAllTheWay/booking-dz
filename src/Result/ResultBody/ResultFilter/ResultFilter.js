@@ -73,7 +73,7 @@ class ResultFilter extends Component {
                     <ClipLoader
                         sizeUnit={"px"}
                         size={150}
-                        color={'#123abc'}
+                        color={'#808080'}
                     />
                 </div>
             );

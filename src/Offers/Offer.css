@@ -3,9 +3,13 @@
     padding-right: 10px;
     display: flex;
     justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: x-large;
     font-family: 'Dosis', sans-serif;
-    font-size: large;
     align-content: center;
+    font-weight: bolder;
+    background-color: #4CAF50;
 }
 
 .OfferClicked {
@@ -35,11 +39,9 @@
 
 .SmallOfferWidth{
     width: 120px;
-    font-family: 'Dosis', sans-serif;
 }
 
 .LargeOfferWidth{
     width: 300px;
-    font-family: 'Dosis', sans-serif;
 
 }

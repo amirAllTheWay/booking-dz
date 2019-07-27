@@ -8,7 +8,7 @@
 }
 
 .DatePicker {
-    height: 15px;
+    height: 37px;
     width: 140px;
     border: 2px solid lightgrey;
     padding: 10px;
@@ -17,7 +17,13 @@
 }
 
 .DateTitle {
-    font-size: x-small;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    font-weight: bolder;
+    font-size: small;
     width: fit-content;
     color: black;
     font-family: 'Dosis', sans-serif;

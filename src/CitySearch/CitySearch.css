@@ -7,9 +7,18 @@
 }
 
 .SearchTitle {
-    font-size: x-small;
-    width: fit-content;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
     color: black;
     font-weight: bolder;
+    font-size: small;
     font-family: 'Dosis', sans-serif;
+}
+
+.TitleContainer{
+    display: flex;
+    margin-top: 15px;
 }

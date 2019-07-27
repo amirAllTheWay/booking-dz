@@ -1,7 +1,6 @@
 import {Component} from "react";
 import React from "react";
 
-import './Offers.css';
 import './Offer.css';
 
 class Offer extends Component {
@@ -54,7 +53,7 @@ class Offer extends Component {
         }
         return (
             <div className={style} onClick={this.props.click}>
-                <h3>{this.props.offerName}</h3>
+                <p>{this.props.offerName}</p>
             </div>
 
 

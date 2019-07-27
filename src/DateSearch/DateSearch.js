@@ -26,7 +26,7 @@ class CitySearch extends Component {
             <div className="DateSearch">
 
                 <div className="DateTitle">
-                    <h3>{this.props.dateTitle}</h3>
+                    <p className="TitleContainer">{this.props.dateTitle}</p>
                 </div>
                 <DatePicker
                     className="DatePicker"

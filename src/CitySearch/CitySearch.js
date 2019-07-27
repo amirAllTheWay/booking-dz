@@ -32,14 +32,14 @@ class CitySearch extends Component {
             <div className="CitySearch">
 
                 <div className="SearchTitle">
-                    <h3>{this.props.searchTitle}</h3>
+                    <p className="TitleContainer">{this.props.searchTitle}</p>
                 </div>
-
+                <div>
                     <Select
                         onChange={this.handleChange}x
                         value={selectedOption}
                         options={options}/>
-
+                </div>
             </div>
 
 

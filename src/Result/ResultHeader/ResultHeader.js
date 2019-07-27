@@ -6,14 +6,11 @@ import  { connect } from 'react-redux';
 
 import './ResultHeader.css';
 
-import Offer from "../../Offers/Offer";
 import  '../../Offers/Offers.css';
 import  '../../Offers/Offer.css';
 import '../../Filters/Filters.css';
 import CitySearch from "../../CitySearch/CitySearch";
 import DateSearch from "../../DateSearch/DateSearch";
-import SearchButton from "../../SearchButton/SearchButton";
-import Toolbar from "../../Toolbar/Toolbar";
 
 
 class ResultHeader extends Component {
