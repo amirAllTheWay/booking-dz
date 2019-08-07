@@ -9,6 +9,8 @@ import Main from './Main/Main';
 import ResultBody from "./Result/ResultBody/ResultBody";
 import OfferDetails from "./OfferDetails/OfferDetails";
 import TourismFilterPage from "./TourismFilterPage/TourismFilterPage";
+import Authentication from "./AdminPage/Authentication/Authentication";
+import AdminPage from "./AdminPage/AdminPage";
 
 
 class App extends Component {
@@ -27,6 +29,8 @@ class App extends Component {
               <Route path="/details"  exact component={OfferDetails} />
               <Route path="/tourismResults"  exact component={ResultBody} />
               <Route path="/tourismPage"  exact component={TourismFilterPage} />
+              <Route path="/auth"  exact component={Authentication} />
+              <Route path="/admin"  exact component={AdminPage} />
           </Switch>
 
       </div>

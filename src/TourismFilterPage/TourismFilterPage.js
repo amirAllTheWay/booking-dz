@@ -2,8 +2,6 @@ import {Component} from "react";
 import React from "react";
 
 import './TourismFilterPage.css';
-import Toolbar from "../Toolbar/Toolbar";
-import * as actionCreators from "../store/actions/actions";
 import {connect} from "react-redux";
 import { withRouter } from 'react-router-dom';
 import TourismFilter from "../Filters/TourismFilter/TourismFilter";
@@ -13,8 +11,6 @@ import TourismFilter from "../Filters/TourismFilter/TourismFilter";
 class TourismFilterPage extends Component {
 
     render() {
-
-        //this.props.onTourismPageLaunched();
 
         return (
             <div className="TourismFilterPage">

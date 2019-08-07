@@ -1,9 +1,9 @@
 .Main {
     background-image: url('../resources/images/main_background_image_bis.png');
-    height: 850px;
+    height: 950px;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }

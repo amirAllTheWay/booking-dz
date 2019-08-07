@@ -32,7 +32,6 @@ const mapDispatchToProps = dispatch => {
     //let  researchParams  = {departureCity: this.state.departureCity, destinationCity: this.state.destinationCity};
     return {
         onMainScreenLaunched: () => {
-            console.log(" ***** onMainScreenLaunched: ");
             dispatch(actionCreators.mainScreenLaunched());
         }
     };

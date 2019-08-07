@@ -1,7 +1,5 @@
 import {Component} from "react";
 import React from "react";
-import { ClipLoader } from 'react-spinners';
-
 import './OfferDetails.css';
 
 

@@ -59,12 +59,68 @@ export const getTourismResults = (payload) => {
 
 export const getHotTourismOffers = () => {
 
-    let route = 'https://cors-anywhere.herokuapp.com/https://sama-djazair.herokuapp.com/getHotTourismOffers';
+    let route = 'http://localhost:8000/getHotTourismOffers';
 
     return dispatch => {
         axios.get(route).then(
             response => dispatch(onMainPage(response)),
             (error) => { console.log("ERROR hot tourism offers: ", error.toString()) }
+        )
+
+    };
+};
+
+const onAllTourismOffersReceived = (response) => {
+
+    console.log(" ++++ onAllTourismOffersReceived: response: ", response);
+
+    let hotTourismOffers = {
+        researchType: "tourism",
+        results: response.data.tourismOffers
+    };
+
+    return {
+        type: "TOOLABR_ALL_TOURISM_OFFERS_RECEIVED",
+        payload: hotTourismOffers
+    };
+};
+
+export const getAllTourismOffers = () => {
+
+    let route = "https://cors-anywhere.herokuapp.com/https://sama-djazair.herokuapp.com/getOffers/allTourismOffers";
+
+    return dispatch => {
+        axios.get(route).then(
+            response => dispatch(onMainPage(response)),
+            (error) => { console.log("ERROR hot tourism offers: ", error.toString()) }
+        )
+
+    };
+};
+
+export const authenticateUser = (authData) => {
+
+    let route = 'http://localhost:8000/authenticate';
+    console.log("authenticateUser: ", authData);
+
+    return dispatch => {
+        axios.post(route, authData).then(
+            response => dispatch({type: "AUTH_USER", payload: response.data}),
+            (error) => { console.log("ERROR authenticate user: ", error.toString()) }
+        )
+
+    };
+};
+
+export const addTourismOffer = (tourismOffer) => {
+
+    let route = 'http://localhost:8000/addTourismOffer';
+    console.log("addTourismOffer: ", tourismOffer);
+
+    return dispatch => {
+        axios.post(route, tourismOffer).then(
+            response => dispatch({type: "ADD_TOURISM_OFFER", payload: response.data}),
+            (error) => { console.log("ERROR add tourism offer: ", error.toString()) }
         )
 
     };

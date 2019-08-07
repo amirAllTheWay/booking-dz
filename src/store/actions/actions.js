@@ -46,3 +46,15 @@ export const offerDetailsButtonClicked = (offerId) => {
         payload: offerId
     };
 };
+
+export const authenticate = (authData) => {
+
+    console.log("[authenticate] ", authData);
+    return searchCaller.authenticateUser(authData);
+};
+
+export const addTourismOffer = (tourismOffer) => {
+
+    console.log("[addTourismOffer] ", tourismOffer);
+    return searchCaller.addTourismOffer(tourismOffer);
+};

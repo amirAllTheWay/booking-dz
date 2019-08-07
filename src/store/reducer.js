@@ -1,3 +1,5 @@
+import * as HttpStatus from "http-status-codes";
+
 const initialState = {
     researchButtonPressed: false,
     offerDetailsClicked:false,
@@ -7,10 +9,13 @@ const initialState = {
     filteredTourismResults: [],
     filterMinMax: null,
     hotTourismOffers: [],
-    omraResults: []
+    omraResults: [],
+    authInfo: null,
+    offerManagementStatus: null
 }
 
-const reducer  = (state = initialState, action) => {
+const
+    reducer  = (state = initialState, action) => {
 
     if (action.type === 'SEARCH_BUTTON_CLICKED') {
         console.log("SEARCH_BUTTON_CLICKED clicked");
@@ -137,13 +142,65 @@ const reducer  = (state = initialState, action) => {
     }
 
 
-    if (action.type === 'OFFER_DETAILS_CLICKED') {
+    if (action.type === "OFFER_DETAILS_CLICKED") {
         console.log("OFFER_DETAILS_CLICKED clicked");
 
         return {
             ...state,
             offerDetailsClicked: true,
             offerDetailsId: action.payload
+        };
+    }
+
+    if (action.type === 'AUTH_USER') {
+        console.log("reducer AUTH_USER payload: ", action.payload);
+        let isAuthenticated = false;
+        let token = null;
+        let authData;
+
+        if(action.payload.httpResponse.responseCode === HttpStatus.OK && action.payload.httpResponse.responseMessage === "OK") {
+            isAuthenticated = true;
+            token = action.payload.authData.token;
+        }
+        authData = {
+            isAuthenticated: isAuthenticated,
+            token: token
+        };
+
+        return {
+            ...state,
+            authInfo: authData
+        };
+    }
+
+    if (action.type === 'AUTH_UNMOUNTING') {
+        return {
+            ...state,
+            authInfo: null
+        };
+    }
+
+    if (action.type === 'ADD_TOURISM_OFFER') {
+        console.log("reducer ADD_TOURISM_OFFER payload: ", action.payload);
+        let offerManagementStatus = {};
+        console.log("reducer ADD_TOURISM_OFFER payload: ", action.payload.responseCode);
+        if(action.payload.responseCode === HttpStatus.CREATED) {
+            offerManagementStatus.isOfferAddedSuccessfully = true;
+        } else {
+            offerManagementStatus.isOfferAddedSuccessfully = false;
+        }
+
+        return {
+            ...state,
+            offerManagementStatus: offerManagementStatus
+        };
+
+    }
+
+    if (action.type === 'ADMIN_PAGE_UNMOUNTING') {
+        return {
+            ...state,
+            offerManagementStatus: null
         };
     }
 

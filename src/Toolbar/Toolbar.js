@@ -2,8 +2,8 @@ import React from 'react';
 import {Component} from "react";
 
 import './Toolbar.css';
-import {connect} from "react-redux";
 import { withRouter } from 'react-router-dom';
+import { Button } from "react-bootstrap";
 
 class Toolbar extends Component {
 
@@ -36,7 +36,7 @@ class Toolbar extends Component {
         this.setState({toolbarButtons: btnsState}, () => {console.log("updateToolbarState: ", this.state);});
     }
 
-    onToolbarTourismButtonClicked =  (btnKey, property) => {
+    onToolbarTourismButtonClicked = (btnKey, property) => {
         this.updateToolbarState(btnKey);
 
 
@@ -45,6 +45,11 @@ class Toolbar extends Component {
         }else if(btnKey === 1){
             property.history.push("/tourismPage");
         }
+    }
+
+    onLoginButtonClicked = (property) => {
+
+            property.history.push("/auth");
     }
 
     render() {
@@ -71,9 +76,10 @@ class Toolbar extends Component {
                         </button>
                     </div>
 
-                    <div className="LoginButtonContainer">
-                        <button className="LoginButton">Se connecter</button>
-                    </div>
+                    <Button className=" LoginButtonContainer btn-block" variant="primary" type="submit" onClick={() =>this.onLoginButtonClicked(this.props)}>
+                        Espace Pro
+                    </Button>
+
 
                 </div>
 
