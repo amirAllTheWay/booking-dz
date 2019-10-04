@@ -17,6 +17,7 @@ div.FlyingCompanyColumn > img {
 .img {
     flex:1
 }
+
 .FlyingCompanyColumn {
     alignItems:center;
     flex-direction: column;
@@ -43,6 +44,7 @@ div.FlyingCompanyColumn > img {
 
 .AgencyName{
     margin-left: 10px;
+    font-size:1.5vw;
 }
 
 .PriceColumn {
@@ -56,6 +58,7 @@ div.FlyingCompanyColumn > img {
 
 .PriceText{
     margin-right: 10px;
+    font-size:1.5vw;
 }
 
 .PriceDetails{
@@ -63,6 +66,7 @@ div.FlyingCompanyColumn > img {
     font-size: small;
     color: grey;
     margin-right: 10px;
+    font-size:1vw;
 }
 
 .HotelInfo {
@@ -74,22 +78,25 @@ div.FlyingCompanyColumn > img {
 .HotelName{
     display: flex;
     flex-direction: column;
-    flex: 0.75;
+    flex: 1;
+    font-size:1.5vw;
 }
 
 .HotelStars{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex: 0.75;
+    flex: 1;
     margin-top: -10px;
+    font-size:1vw;
 }
 
 .HotelOptions{
     display: flex;
-    flex: 4;
+    flex: 2;
     flex-direction: column;
     align-items: flex-start;
+    font-size:1vw;
 }
 
 .OfferDuration{
@@ -100,7 +107,6 @@ div.FlyingCompanyColumn > img {
     flex: 0.75;
     justify-content: flex-end;
     align-items: center;
-    background-color: grey;
 }
 
 .buttonOfferDetails {
