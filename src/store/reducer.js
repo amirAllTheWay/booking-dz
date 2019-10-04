@@ -34,17 +34,21 @@ const
         console.log(" *** RESEARCH_RESPONSE_RECEIVED results: ", results);
         let durationMin = Number.parseInt(results[0].travelDuration, 10);
         let durationMax = Number.parseInt(results[0].travelDuration, 10);
-        let priceMin = Number.parseInt(results[0].price, 10);
-        let priceMax = Number.parseInt(results[0].price, 10);
+        let priceMin = Number.parseInt(results[0].offerPrice, 10);
+        let priceMax = Number.parseInt(results[0].offerPrice, 10);
         let starsMin = Number.parseInt(results[0].hotelStars, 10);
         let starsMax = Number.parseInt(results[0].hotelStars, 10);
         let durationValue, priceValue, starsValue = 0;
 
+        console.log(" *** RESEARCH_RESPONSE_RECEIVED priceMin: ", priceMin);
+
         // Duration
         results.map((element, index) => {
             durationValue = Number.parseInt(element.travelDuration, 10);
-            priceValue = Number.parseInt(element.price, 10);
+            priceValue = Number.parseInt(element.offerPrice, 10);
             starsValue = Number.parseInt(element.hotelStars, 10);
+
+            console.log(" *** RESEARCH_RESPONSE_RECEIVED priceValue: ", priceValue);
 
             if(durationValue < durationMin) {
                 durationMin = durationValue;
@@ -85,7 +89,7 @@ const
         };
 
 
-        console.log(" ------- RESEARCH_RESPONSE_RECEIVED Duration: ", filterMinMax);
+        console.log(" ------- RESEARCH_RESPONSE_RECEIVED action.payload: ", filterMinMax);
 
         return {
             ...state,
@@ -107,10 +111,11 @@ const
         const items = [];
         let durationValue, priceValue, starsValue = 0;
         let tourismElements = state.tourismResults;
+        console.log(" ******* FILTER_VALUES_CHANGED tourismElements: ", state);
 
         tourismElements.map((tourismResult, index) => {
             durationValue = Number.parseInt(tourismResult.travelDuration, 10);
-            priceValue = Number.parseInt(tourismResult.price, 10);
+            priceValue = Number.parseInt(tourismResult.offerPrice, 10);
             starsValue = Number.parseInt(tourismResult.hotelStars, 10);
             console.log(" ------- PRICE_FILTER_CHANGED item 1: ", durationValue, priceValue, starsValue);
 

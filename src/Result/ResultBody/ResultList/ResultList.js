@@ -33,8 +33,8 @@ class ResultList extends Component {
                             flyingCompany = {result.flyingCompany}
                             departureCity = {result.departureCity}
                             destinationCity = {result.destinationCity}
-                            hotel = {result.hotel}
-                            price = {result.price}
+                            hotel = {result.hotelName}
+                            price = {result.offerPrice}
                             image = {result.hotelImage}
                             agency = {result.travelAgency}
                             duration = {result.travelDuration}

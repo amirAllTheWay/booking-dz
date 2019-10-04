@@ -34,7 +34,7 @@ class HotOffers extends Component {
                            departureCity = {result.departureCity}
                            destinationCity = {result.destinationCity}
                            hotel = {result.hotel}
-                           price = {result.price}
+                           price = {result.offerPrice}
                            image = {result.hotelImage}
                            duration = {result.travelDuration}
                        />
@@ -51,7 +51,7 @@ class HotOffers extends Component {
                                 departureCity = {result.departureCity}
                                 destinationCity = {result.destinationCity}
                                 hotel = {result.hotel}
-                                price = {result.price}
+                                price = {result.offerPrice}
                                 image = {result.hotelImage}
                                 duration = {result.travelDuration}
                             />
