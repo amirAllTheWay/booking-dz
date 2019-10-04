@@ -19,7 +19,6 @@ class ResultBody extends Component {
                 <div className="ResultMain">
                     <ResultFilter/>
                     <ResultList/>
-                    <AdBanner/>
                 </div>
             </div>
         );

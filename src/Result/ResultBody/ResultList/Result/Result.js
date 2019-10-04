@@ -11,7 +11,7 @@ class Result extends Component {
     render() {
 
         return (
-            <div className="Result">
+            <div className="Result" id='Result'>
 
                 <div className="FlyingCompanyColumn">
                     <img src={`data:image/jpeg;base64,${this.props.image}`} width="420px" height="280px" alt=""/>
@@ -19,9 +19,6 @@ class Result extends Component {
 
                 <div className="ResultDetailsColumn">
 
-                    <div className="AgencyColumn">
-                        <h3 className="AgencyName">{this.props.agency}</h3>
-                    </div>
 
                     <div className="PriceColumn">
                         <h3 className="PriceText">{this.props.price} DA</h3>

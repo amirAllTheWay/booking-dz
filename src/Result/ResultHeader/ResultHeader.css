@@ -1,6 +1,6 @@
 .ResultHeader {
     background-image: url('main_background_image.jpg');
-    height: 400px;
+    height: 200px;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
 .RHSearchContainer{
     display: flex;
     width: 1000px;
-    height: 40%;
+    height: 70%;
     flex-direction: column;
 }
 

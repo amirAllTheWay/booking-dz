@@ -1,6 +1,7 @@
 .ResultBody {
     display: flex;
     flex-direction: column;
+    background-color: #F2F1F6;
 
 }
 
