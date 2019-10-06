@@ -47,6 +47,14 @@ export const offerDetailsButtonClicked = (offerId) => {
     };
 };
 
+export const offerQuickViewButtonClicked = (offerId) => {
+
+    return {
+        type: "OFFER_QUICK_VIEW_CLICKED",
+        payload: offerId
+    };
+};
+
 export const authenticate = (authData) => {
 
     console.log("[authenticate] ", authData);

@@ -11,7 +11,8 @@ const initialState = {
     hotTourismOffers: [],
     omraResults: [],
     authInfo: null,
-    offerManagementStatus: null
+    offerManagementStatus: null,
+    selectedQuickViewOffer: null
 }
 
 const
@@ -40,15 +41,10 @@ const
         let starsMax = Number.parseInt(results[0].hotelStars, 10);
         let durationValue, priceValue, starsValue = 0;
 
-        console.log(" *** RESEARCH_RESPONSE_RECEIVED priceMin: ", priceMin);
-
-        // Duration
         results.map((element, index) => {
             durationValue = Number.parseInt(element.travelDuration, 10);
             priceValue = Number.parseInt(element.offerPrice, 10);
             starsValue = Number.parseInt(element.hotelStars, 10);
-
-            console.log(" *** RESEARCH_RESPONSE_RECEIVED priceValue: ", priceValue);
 
             if(durationValue < durationMin) {
                 durationMin = durationValue;
@@ -157,6 +153,32 @@ const
         };
     }
 
+    if (action.type === "OFFER_QUICK_VIEW_CLICKED") {
+        console.log("OFFER_QUICK_VIEW_CLICKED clicked: ", action.payload);
+        let filteredTourismResults = state.filteredTourismResults;
+        let selectedQuickViewOffer = null;
+
+        for (var i = 0; i < filteredTourismResults.length; i++) {
+            if (filteredTourismResults[i].offerReference=== action.payload){
+                console.log("OFFER_QUICK_VIEW_CLICKED found offer: ", filteredTourismResults[i]);
+                selectedQuickViewOffer = filteredTourismResults[i];
+                break;
+            }
+        }
+
+        return {
+            ...state,
+            selectedQuickViewOffer: selectedQuickViewOffer
+        };
+    }
+
+    if (action.type === "CLEAR_SELECTED_QUICK_VIEW_OFFER") {
+        console.log("CLEAR_SELECTED_QUICK_VIEW_OFFER clicked: ", action.payload);
+        return {
+            ...state,
+            selectedQuickViewOffer: null
+        };
+    }
     if (action.type === 'AUTH_USER') {
         console.log("reducer AUTH_USER payload: ", action.payload);
         let isAuthenticated = false;

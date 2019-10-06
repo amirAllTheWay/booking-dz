@@ -11,7 +11,7 @@
     border: 1px;
     border-style: solid;
     border-color: aliceblue;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 #Result:hover {
@@ -30,7 +30,6 @@ div.FlyingCompanyColumn > img {
 .FlyingCompanyColumn {
     alignItems:center;
     flex-direction: column;
-    background-color: burlywood;
     width: 60%;
     background-size: cover;
 }

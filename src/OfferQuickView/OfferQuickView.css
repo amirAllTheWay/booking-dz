@@ -1,0 +1,119 @@
+.QVpageContainer{
+    display: flex;
+    flex-direction: column;
+    height: 618px;
+    width: 40%;
+    margin-top: 1%;
+    resize: none;
+    border: 1.7px;
+    border-color: lightgrey;
+    border-radius: 2px;
+    border-style: solid;
+}
+
+.OfferQuickView{
+    display: flex;
+    flex-direction: column;
+    resize: none;
+}
+
+.QVOfferNameContainer{
+    display: flex;
+    height: 10%;
+    width: 100%;
+    background-color: white;
+    font-size:0.8vw;
+}
+
+.QVhotelNameContainer{
+    display: flex;
+    height: 10%;
+    background-color: #4CAF50;
+    font-size:1vw;
+}
+
+.QVhotelName{
+    height: 100%;
+    margin-left: 10px;
+}
+
+.QVHotelDetailsRecap{
+    display: flex;
+    flex-direction: row;
+    height: 75%;
+    background-color: lightcoral;
+}
+
+.QVHotelPhotosColumn{
+    display: flex;
+    alignItems:center;
+    flex-direction: column;
+    background-size: cover;
+}
+
+.QVStayDetailsColumn{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    background-color: cornflowerblue;
+}
+
+.QVhotelOptions{
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.QVofferDuration{
+    justify-content: flex-start;
+    display: flex;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.QVTravelAgencyRow{
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    background-color: #61dafb;
+}
+
+.QVagencyNameAddress{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    background-color: orange;
+}
+
+.QVagencyName{
+    display: flex;
+    margin-left: 10px;
+    font-size:2vw;
+}
+
+.QVagencyAddress{
+    display: flex;
+    margin-left: 10px;
+    font-size:1vw;
+}
+
+.QVagencyPhoneNumber{
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.QVagencyPhoneNumberText{
+    flex: 1;
+    margin-left: 10px;
+    font-size: 1.5vw;
+}
+
+.QVoverride {
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+}

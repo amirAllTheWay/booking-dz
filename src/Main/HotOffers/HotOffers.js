@@ -68,9 +68,7 @@ class HotOffers extends Component {
     }
 }
 
-
 const mapStateToProps = state => {
-    console.log(" **** Hot offers state was updated: ", state);
 
     return {
         hotTourismOffers: state.hotTourismOffers

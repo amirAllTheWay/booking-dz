@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
     width: 45%;
+    height: inherit;
     justify-content: flex-start;
-    overflow-y: scroll;
+}
+
+.ListContainer{
+    overflow: auto;
 }
