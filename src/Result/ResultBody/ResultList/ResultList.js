@@ -25,7 +25,7 @@ class ResultList extends Component {
             );
         } else {
             selectedView = (
-                <div>
+                <div className="ListContainer">
                     {this.props.filteredTourismResults.map((result, index) => {
                         return <Result
                             key = {index}
@@ -38,9 +38,10 @@ class ResultList extends Component {
                             image = {result.hotelImage}
                             agency = {result.travelAgency}
                             duration = {result.travelDuration}
-                            hotalStars = {result.hotalStars}
+                            hotalStars = {result.hotelStars}
                             agencyAddress = {result.agencyAddress}
                             agencyPhone = {result.agencyPhone}
+                            offerReference = {result.offerReference}
                         />
                     })}
                 </div>

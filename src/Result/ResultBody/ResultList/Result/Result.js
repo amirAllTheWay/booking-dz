@@ -19,7 +19,6 @@ class Result extends Component {
 
                 <div className="ResultDetailsColumn">
 
-
                     <div className="PriceColumn">
                         <h3 className="PriceText">{this.props.price} DA</h3>
                         <h3 className="PriceDetails"> ttc/pers</h3>
@@ -43,7 +42,7 @@ class Result extends Component {
                     </div>
 
                     <div className="OfferDetails">
-                        <button className="buttonOfferDetails" onClick={() => this.props.offerDetailsButtonClicked(this.props, this.props.index)}>Voir</button>
+                        <button className="buttonOfferDetails" onClick={() => this.props.offerDetailsButtonClicked(this.props, this.props.offerReference)}>Voir</button>
                     </div>
 
                 </div>
@@ -57,11 +56,12 @@ class Result extends Component {
 const mapDispatchToProps = dispatch => {
 
     return {
-        offerDetailsButtonClicked: (props, key) => {
+        offerDetailsButtonClicked: (props, offerReference) => {
             console.log("Result : ", props);
-            dispatch(actionCreators.offerDetailsButtonClicked(0));
+            //dispatch(actionCreators.offerDetailsButtonClicked(0));
+            dispatch(actionCreators.offerQuickViewButtonClicked(offerReference));
 
-
+            /*
             props.history.push({
                 pathname: "/details",
                 search: '?query=abc',
@@ -80,7 +80,7 @@ const mapDispatchToProps = dispatch => {
                             agencyPhone : props.agencyPhone
                         }
                 }
-            });
+            });*/
         }
     };
 
