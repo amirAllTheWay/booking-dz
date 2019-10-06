@@ -41,7 +41,6 @@ class App extends Component {
 const mapStateToProps = state => {
     return {
         isResearchButtonClicked: state.researchButtonPressed,
-        isOfferDetailsClicked: state.offerDetailsClicked,
         offerDetailsId: state.offerDetailsId
     }
 

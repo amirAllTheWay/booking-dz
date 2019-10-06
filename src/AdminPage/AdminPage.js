@@ -6,6 +6,7 @@ import * as actionCreators from "../store/actions/actions";
 import {connect} from "react-redux";
 import { withRouter } from 'react-router-dom';
 import FileBase64 from 'react-file-base64';
+import OmraForm from "../Forms/OmraForm/OmraForm";
 
 class AdminPage extends Component{
 
@@ -143,7 +144,6 @@ class AdminPage extends Component{
                                     </Col>
                                 </Form.Group>
 
-
                                 <Form.Group as={Row} controlId="formHorizontalPassword">
                                     <Form.Label column sm={2}>
                                         Date du retour
@@ -206,10 +206,9 @@ class AdminPage extends Component{
                                     <Form.Label column sm={2}>
                                         Description
                                     </Form.Label>
-                                    <Col sm={10}>
-                            <textarea className="OfferDescriptionAdmin" ref={this.offerDescription} rows="4" cols="80" placeholder="Description de l'offre">
-                            </textarea>
-
+                                    <Col sm={10} className="OfferDescriptionAdminContainer">
+                                        <textarea className="OfferDescriptionAdmin" ref={this.offerDescription} rows="4" cols="80" placeholder="  Description de l'offre">
+                                        </textarea>
                                     </Col>
                                 </Form.Group>
 
@@ -253,7 +252,7 @@ class AdminPage extends Component{
                                     <Form.Label column sm={2}>
                                         Photos
                                     </Form.Label>
-                                    <Col sm={10}>
+                                    <Col sm={10} className="PhotosColumnContainer">
                                         <FileBase64
                                             multiple={ false }
                                             onDone={ this.getFiles.bind(this) } />
@@ -272,7 +271,7 @@ class AdminPage extends Component{
                         </div>
                     </Tab>
                     <Tab eventKey="omra" title="Omra">
-                        <h3 className="p-4">Ajouter une offre de 3omra</h3>
+                        <OmraForm/>
                     </Tab>
                     <Tab eventKey="visa" title="Visa">
                         <h3 className="p-4">Ajouter une offre de Visa</h3>
