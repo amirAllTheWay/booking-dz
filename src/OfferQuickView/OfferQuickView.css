@@ -5,16 +5,16 @@
     width: 40%;
     margin-top: 1%;
     resize: none;
-    border: 1.7px;
-    border-color: lightgrey;
-    border-radius: 2px;
-    border-style: solid;
 }
 
 .OfferQuickView{
     display: flex;
     flex-direction: column;
     resize: none;
+    border: 1.7px;
+    border-color: lightgrey;
+    border-radius: 2px;
+    border-style: solid;
 }
 
 .QVOfferNameContainer{
