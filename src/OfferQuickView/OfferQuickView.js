@@ -22,7 +22,7 @@ class OfferQuickView extends Component {
                     <div className="OfferQuickView">
 
                         <div className="QVHotelPhotosColumn">
-                            <img src={`data:image/jpeg;base64,${this.props.selectedQuickViewOffer.hotelImage}`} width="601px" height="300px" alt=""/>
+                            <img src={`data:image/jpeg;base64,${this.props.selectedQuickViewOffer.hotelImage}`} width="541px" height="300px" alt=""/>
                         </div>
 
                         <div className="QVOfferNameContainer">
