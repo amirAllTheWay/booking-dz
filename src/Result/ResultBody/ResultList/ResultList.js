@@ -6,9 +6,16 @@ import  { connect } from 'react-redux';
 import './ResultList.css';
 import Result from "./Result/Result";
 import {ClipLoader} from "react-spinners";
+import * as actionCreators from "../../../store/actions/actions";
 
 
 class ResultList extends Component {
+
+    componentWillMount(prevProps, prevState) {
+        if(!(this.props.filteredTourismResults === undefined || this.props.filteredTourismResults === null)) {
+            this.props.defaultLaunch(this.props.filteredTourismResults[0].offerReference);
+        }
+    }
 
     render() {
         let selectedView = null;
@@ -65,4 +72,14 @@ const mapStateToProps = state => {
 
 };
 
-export default connect(mapStateToProps)(ResultList);
+const mapDispatchToProps = dispatch => {
+
+    return {
+        defaultLaunch: (offerReference) => {
+            dispatch(actionCreators.offerQuickViewButtonClicked(offerReference));
+
+        }
+    };
+
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ResultList);

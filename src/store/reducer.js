@@ -158,8 +158,8 @@ const
         let filteredTourismResults = state.filteredTourismResults;
         let selectedQuickViewOffer = null;
 
-        for (var i = 0; i < filteredTourismResults.length; i++) {
-            if (filteredTourismResults[i].offerReference=== action.payload){
+        for (let i = 0; i < filteredTourismResults.length; i++) {
+            if (filteredTourismResults[i].offerReference === action.payload){
                 console.log("OFFER_QUICK_VIEW_CLICKED found offer: ", filteredTourismResults[i]);
                 selectedQuickViewOffer = filteredTourismResults[i];
                 break;
