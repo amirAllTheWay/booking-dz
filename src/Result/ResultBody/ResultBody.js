@@ -21,7 +21,6 @@ class ResultBody extends Component {
             <div className="ResultBody">
                 <ResultHeader/>
                 <div className="ResultMain">
-                    <ResultFilter/>
                     <ResultList/>
                     <OfferQuickView/>
                 </div>

@@ -30,16 +30,59 @@ div.FlyingCompanyColumn > img {
 .FlyingCompanyColumn {
     alignItems:center;
     flex-direction: column;
-    width: 60%;
+    width: 35%;
     background-size: cover;
 }
 
 .ResultDetailsColumn {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 30%;
 }
 
+.TitleRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1.5;
+}
+.TitleText{
+    margin-left: 10px;
+    font-size: 1.7vw;
+    color: red;
+    font-weight: bold;
+}
+
+.ElementaryRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    flex: 0.75;
+}
+
+
+
+.DestinationRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0.75;
+}
+
+.DestinationText{
+    margin-top: 2%;
+    margin-left: 10px;
+    font-size: 0.8vw;
+    color: black;
+    font-weight: bold;
+}
+.icon{
+    margin-left: 10px;
+}
 .AgencyColumn{
     display: flex;
     flex-direction: column;
@@ -53,19 +96,13 @@ div.FlyingCompanyColumn > img {
     font-size:1.3vw;
 }
 
-.PriceColumn {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: white;
-    flex: 0.75;
-}
+
 
 .PriceText{
     margin-right: 10px;
-    font-size:1.5vw;
-    color: orange;
+    font-size: 1.4vw;
+    color: red;
+    font-weight: bold;
 }
 
 .PriceDetails{
@@ -90,12 +127,7 @@ div.FlyingCompanyColumn > img {
 }
 
 .HotelStars{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex: 1;
-    margin-top: -10px;
-    font-size:1vw;
+    margin-left: 10px;
 }
 
 .HotelOptions{
@@ -109,24 +141,70 @@ div.FlyingCompanyColumn > img {
 .OfferDuration{
     font-weight: bold;
 }
+.AgencyLogoRow{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-right: 3%;
+    flex: 2;
+}
+
 .OfferDetails{
     display: flex;
-    flex: 0.75;
-    justify-content: flex-end;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
     align-items: center;
+}
+
+.PriceColumn {
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.ReducedPriceColumn {
+    display: flex;
+    flex-direction: row;
+}
+
+.OriginalPriceColumn {
+    display: flex;
+    flex-direction: row;
+}
+
+.OriginalPriceText{
+    margin-right: 10px;
+    font-size: 0.9vw;
+    color: red;
+    font-weight: bold;
+}
+.DetailsButtonColumn {
+    margin-right: 3%;
+    background-color: white;
+    width: 30%;
 }
 
 .buttonOfferDetails {
     margin-right: 10px;
     height: 30px;
-    width: 35%;
+    width: 100%;
     border: 1px;
     border-radius: 5px;
     background-color: green;
     font-weight: bold;
     font-size: medium;
     color: white;
+}
 
+
+
+.AgencyLogoPriceColumn{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
 }
 
 .checked {

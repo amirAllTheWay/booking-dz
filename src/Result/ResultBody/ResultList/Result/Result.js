@@ -10,6 +10,16 @@ class Result extends Component {
 
     render() {
 
+        const items = []
+        // process hotel stars
+        for (let i = 0; i < this.props.hotalStars; i++) {
+            items.push(<span className="fa fa-star checked"></span>)
+        }
+
+        //process original price
+        let originalPrice = Number((this.props.price*1.1).toFixed(1));
+
+
         return (
             <div className="Result" id='Result'>
 
@@ -18,33 +28,52 @@ class Result extends Component {
                 </div>
 
                 <div className="ResultDetailsColumn">
-
-                    <div className="PriceColumn">
-                        <h3 className="PriceText">{this.props.price} DA</h3>
-                        <h3 className="PriceDetails"> ttc/pers</h3>
+                    <div className="TitleRow">
+                        <h3 className="TitleText">{this.props.title}</h3>
                     </div>
 
-                    <div className="HotelInfo">
-                        <h3 className="HotelName">{this.props.hotel}</h3>
+                    <div className="ElementaryRow">
+                        <i className = "fas fa-map-marked-alt icon"></i>
+                        <h3 className = "DestinationText">{this.props.destinationCity}</h3>
+                    </div>
+
+                    <div className="DestinationRow">
+                        <i className="fas fa-hotel icon"></i>
+                        <h3 className = "DestinationText">{this.props.hotel}</h3>
                         <div className="HotelStars">
-                            <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
-                            <span className="fa fa-star checked"></span>
-                            <span className="fa fa-star checked"></span>
-                            <span className="fa fa-star checked"></span>
+                            {items}
                         </div>
-
-                        <ul className="HotelOptions">
-                            <li className="OfferDuration">{this.props.duration} jours</li>
-                            <li>All inclusive 24h/24</li>
-                            <li>Chambres aves vue</li>
-                        </ul>
                     </div>
 
+                    <div className="DestinationRow">
+                        <i className="fas fa-plane-departure icon"></i>
+                        <h3 className = "DestinationText">{this.props.flyingCompany}</h3>
+                    </div>
+
+                    <div className="DestinationRow">
+                        <i className="fas fa-calendar-alt icon"></i>
+                        <h3 className = "DestinationText">{this.props.duration} jours et {this.props.duration - 1} nuits</h3>
+                    </div>
+                </div>
+
+                <div className="AgencyLogoPriceColumn">
+                    <div className="AgencyLogoRow">
+                        <img src={`data:image/jpeg;base64,${this.props.image}`} width="120px" height="100px" alt=""/>
+                    </div>
                     <div className="OfferDetails">
-                        <button className="buttonOfferDetails" onClick={() => this.props.offerDetailsButtonClicked(this.props, this.props.offerReference)}>Voir</button>
+                        <div className="PriceColumn">
+                            <div className="ReducedPriceColumn">
+                                <h3 className="PriceText">{this.props.price} DA</h3>
+                                <h3 className="PriceDetails">ttc/pers</h3>
+                            </div>
+                            <div className="OriginalPriceColumn">
+                                <h3 className="OriginalPriceText"><strike>{originalPrice} DA</strike></h3>
+                            </div>
+                        </div>
+                        <div className="DetailsButtonColumn">
+                            <button className="buttonOfferDetails" onClick={() => this.props.offerDetailsButtonClicked(this.props, this.props.offerReference)}>Détails</button>
+                        </div>
                     </div>
-
                 </div>
 
             </div>
@@ -58,29 +87,7 @@ const mapDispatchToProps = dispatch => {
     return {
         offerDetailsButtonClicked: (props, offerReference) => {
             console.log("Result : ", props);
-            //dispatch(actionCreators.offerDetailsButtonClicked(0));
             dispatch(actionCreators.offerQuickViewButtonClicked(offerReference));
-
-            /*
-            props.history.push({
-                pathname: "/details",
-                search: '?query=abc',
-                state: { offer:
-                        {
-                            flyingCompany: props.flyingCompany,
-                            departureCity: props.departureCity,
-                            destinationCity: props.destinationCity,
-                            hotel: props.hotel,
-                            price: props.price,
-                            hotelImage: props.image,
-                            travelAgency: props.agency,
-                            travelDuration: props.duration,
-                            hotelStars: props.hotelStars,
-                            agencyAddress: props.agencyAddress,
-                            agencyPhone : props.agencyPhone
-                        }
-                }
-            });*/
         }
     };
 

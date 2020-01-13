@@ -37,6 +37,7 @@ class ResultList extends Component {
                         return <Result
                             key = {index}
                             index = {index}
+                            title = {result.offerTitle}
                             flyingCompany = {result.flyingCompany}
                             departureCity = {result.departureCity}
                             destinationCity = {result.destinationCity}
