@@ -58,17 +58,18 @@ class Result extends Component {
 
                 <div className="AgencyLogoPriceColumn">
                     <div className="AgencyLogoRow">
-                        <img src={`data:image/jpeg;base64,${this.props.image}`} width="120px" height="100px" alt=""/>
+                        <img src={`data:image/jpeg;base64,${this.props.image}`} width="90px" height="80px" alt=""/>
                     </div>
                     <div className="OfferDetails">
                         <div className="PriceColumn">
+                            <div className="OriginalPriceColumn">
+                                <h3 className="OriginalPriceText"><strike>{originalPrice} DA</strike></h3>
+                            </div>
                             <div className="ReducedPriceColumn">
                                 <h3 className="PriceText">{this.props.price} DA</h3>
                                 <h3 className="PriceDetails">ttc/pers</h3>
                             </div>
-                            <div className="OriginalPriceColumn">
-                                <h3 className="OriginalPriceText"><strike>{originalPrice} DA</strike></h3>
-                            </div>
+
                         </div>
                         <div className="DetailsButtonColumn">
                             <button className="buttonOfferDetails" onClick={() => this.props.offerDetailsButtonClicked(this.props, this.props.offerReference)}>Détails</button>

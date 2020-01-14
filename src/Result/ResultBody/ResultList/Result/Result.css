@@ -1,8 +1,8 @@
 .Result {
     display: flex;
     flex-direction: row;
-    height: 240px;
-    width: 95%;
+    height: 190px;
+    width: 97%;
     margin-top: 2%;
     margin-left: 2.5%;
     margin-bottom: 2%;
@@ -30,14 +30,14 @@ div.FlyingCompanyColumn > img {
 .FlyingCompanyColumn {
     alignItems:center;
     flex-direction: column;
-    width: 35%;
+    width: 30%;
     background-size: cover;
 }
 
 .ResultDetailsColumn {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 35%;
 }
 
 .TitleRow{
@@ -168,6 +168,7 @@ div.FlyingCompanyColumn > img {
 .ReducedPriceColumn {
     display: flex;
     flex-direction: row;
+    margin-bottom: 10%;
 }
 
 .OriginalPriceColumn {

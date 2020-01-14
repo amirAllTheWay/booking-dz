@@ -1,7 +1,7 @@
 .ResultList {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 55%;
     height: inherit;
     justify-content: flex-start;
 }
