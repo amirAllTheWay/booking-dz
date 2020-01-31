@@ -19,7 +19,6 @@ class ResultBody extends Component {
 
         return (
             <div className="ResultBody">
-                <ResultHeader/>
                 <div className="ResultMain">
                     <ResultList/>
                     <OfferQuickView/>

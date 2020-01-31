@@ -1,0 +1,24 @@
+.DetailsTabContainer{
+    display: flex;
+    flex-direction: column;
+    flex: 1.2;
+    width: 100%;
+    resize: none;
+    max-width: 100%;
+    max-height: 100%;
+    resize: none;
+}
+
+
+.tab-style{
+    background-color: lightgrey;
+    height: 100%;
+}
+
+.formLabel{
+    display: flex;
+}
+
+.amir {
+    background-color: #61dafb;
+}

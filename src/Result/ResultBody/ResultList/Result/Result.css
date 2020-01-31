@@ -100,7 +100,7 @@ div.FlyingCompanyColumn > img {
 
 .PriceText{
     margin-right: 10px;
-    font-size: 1.4vw;
+    font-size: 1.3vw;
     color: red;
     font-weight: bold;
 }
@@ -162,18 +162,15 @@ div.FlyingCompanyColumn > img {
     margin-left: 2%;
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 65%;
 }
 
 .ReducedPriceColumn {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 10%;
 }
 
 .OriginalPriceColumn {
     display: flex;
-    flex-direction: row;
 }
 
 .OriginalPriceText{
@@ -194,7 +191,7 @@ div.FlyingCompanyColumn > img {
     width: 100%;
     border: 1px;
     border-radius: 5px;
-    background-color: green;
+    background-color: rgb(255, 191, 66);
     font-weight: bold;
     font-size: medium;
     color: white;

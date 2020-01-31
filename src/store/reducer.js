@@ -33,6 +33,7 @@ const
         // Process to get min and max values
         const results = action.payload.results;
         console.log(" *** RESEARCH_RESPONSE_RECEIVED results: ", results);
+        if ( results !== undefined && results.length > 0) {
         let durationMin = Number.parseInt(results[0].travelDuration, 10);
         let durationMax = Number.parseInt(results[0].travelDuration, 10);
         let priceMin = Number.parseInt(results[0].offerPrice, 10);
@@ -46,28 +47,34 @@ const
             priceValue = Number.parseInt(element.offerPrice, 10);
             starsValue = Number.parseInt(element.hotelStars, 10);
 
-            if(durationValue < durationMin) {
+            if (durationValue < durationMin) {
                 durationMin = durationValue;
-            }else if(durationValue > durationMax) {
+            } else if (durationValue > durationMax) {
                 durationMax = durationValue;
             }
 
-            if(priceValue < priceMin) {
+            if (priceValue < priceMin) {
                 priceMin = priceValue;
-            }else if(priceValue > priceMax) {
+            } else if (priceValue > priceMax) {
                 priceMax = priceValue;
             }
 
-            if(starsValue < starsMin) {
+            if (starsValue < starsMin) {
                 starsMin = starsValue;
-            }else if(starsValue > starsMax) {
+            } else if (starsValue > starsMax) {
                 starsMax = starsValue;
             }
         });
 
-        if(priceMin === priceMax) { priceMin = 0;}
-        if(durationMin === durationMax) { durationMin = 0;}
-        if(starsMin === starsMax) { starsMin = 0;}
+        if (priceMin === priceMax) {
+            priceMin = 0;
+        }
+        if (durationMin === durationMax) {
+            durationMin = 0;
+        }
+        if (starsMin === starsMax) {
+            starsMin = 0;
+        }
 
         let filterMinMax = {
             duration: {
@@ -96,6 +103,7 @@ const
             filteredTourismResults: action.payload.results,
             filterMinMax: filterMinMax
         }
+    }
     }
 
     if (action.type === "FILTER_VALUES_CHANGED") {

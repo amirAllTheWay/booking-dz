@@ -11,8 +11,8 @@ import * as actionCreators from "../../../store/actions/actions";
 
 class ResultList extends Component {
 
-    componentWillMount(prevProps, prevState) {
-        if(!(this.props.filteredTourismResults === undefined || this.props.filteredTourismResults === null)) {
+    componentDidUpdate(prevProps, prevState) {
+        if(!(this.props.filteredTourismResults === undefined || this.props.filteredTourismResults === null || this.props.filteredTourismResults.length === 0) ) {
             this.props.defaultLaunch(this.props.filteredTourismResults[0].offerReference);
         }
     }
@@ -45,11 +45,13 @@ class ResultList extends Component {
                             price = {result.offerPrice}
                             image = {result.hotelImage}
                             agency = {result.travelAgency}
+                            agencyLogo = {result.agencyLogo}
                             duration = {result.travelDuration}
                             hotalStars = {result.hotelStars}
                             agencyAddress = {result.agencyAddress}
                             agencyPhone = {result.agencyPhone}
                             offerReference = {result.offerReference}
+                            hotelPhotos = {result.hotelPhotos}
                         />
                     })}
                 </div>
