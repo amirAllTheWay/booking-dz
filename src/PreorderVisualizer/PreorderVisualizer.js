@@ -155,7 +155,7 @@ class PreorderVisualizer extends Component {
                                 <div className="hotel-row">
                                     <div className="d-flex flex-column">
                                         <div className="d-flex flex-row align-items-start">
-                                            <h5 className="font-weight-bold text-secondary">Hotel Name</h5>
+                                            <h5 className="font-weight-bold text-secondary">{this.props.selectedQuickViewOffer.hotelName}</h5>
                                         </div>
                                         <div className="d-flex flex-row"><i className="fas fa-star"></i><i
                                             className="fas fa-star"></i><i className="fas fa-star"></i>
