@@ -124,3 +124,16 @@ export const addTourismOffer = (tourismOffer) => {
 
     };
 };
+export const generatePreorder = (preorder) => {
+
+    let route = 'http://localhost:8000/generatePreorder';
+    console.log("generatePreorder: ", preorder);
+
+    return dispatch => {
+        axios.post(route, preorder).then(
+            response => dispatch({type: "GENERATE_PREORDER", payload: response.data}),
+            (error) => { console.log("ERROR GENERATE PREORDER: ", error.toString()) }
+        )
+
+    };
+};

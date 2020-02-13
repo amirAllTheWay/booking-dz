@@ -8,7 +8,6 @@ import BookingForm from "../BookingForm/BookingForm";
 class DetailTabs extends Component {
 
     render() {
-
         return (
             <div className="DetailsTabContainer">
                 <Tabs defaultActiveKey="description" id="uncontrolled-tab-example">
@@ -20,10 +19,9 @@ class DetailTabs extends Component {
                             <div><h5>- Transferts Aéroport - Hôtel - Aéroport</h5></div>
                             <div><h5>- Visites guidée avec un guide professionnel arabophone</h5></div>
                         </div>
-
                     </Tab>
                     <Tab eventKey="book" title="Réserver">
-                        <BookingForm/>
+                        <BookingForm selectedQuickViewOffer={this.props.selectedQuickViewOffer}/>
                     </Tab>
                     <Tab eventKey="flightPlan" title="Plan du vol">
                         <div className="pl-5 d-table pt-4 font-weight-bold row justify-content-left">

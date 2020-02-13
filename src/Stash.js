@@ -84,36 +84,19 @@ class Search extends Component {
 
     handleOfferClicked = (offerId) => {
 
-
         const selectedOffer = {...this.state.offers[offerId]};
 
         const previouslySelectedOffer = {...this.state.offers[this.state.selectedOffedIndex]};
         previouslySelectedOffer.isSelected = false;
 
-
         selectedOffer.isSelected = true;
-        console.log("handleOfferClicked 3 selectedOffer: ", selectedOffer);
-        console.log("handleOfferClicked 3 previouslySelectedOffer: ", previouslySelectedOffer);
 
         const newOffers = [...this.state.offers];
 
-        console.log("handleOfferClicked 3 newOffers[offerId]: ", newOffers[offerId]);
         newOffers[offerId] = selectedOffer;
         newOffers[this.state.selectedOffedIndex] = previouslySelectedOffer;
 
-        console.log("handleOfferClicked 3 newOffers: ", newOffers);
-
         this.setState({selectedOffedIndex: offerId});
-
-
-        console.log("handleOfferClicked 3 state 1: ", this.state);
-        // console.log("handleOfferClicked 3 offers 2: ", offers);
-
-
-
-
-        //console.log("handleOfferClicked 3 state: ", this.state);
-
     }
 
     render() {
@@ -161,7 +144,82 @@ class Search extends Component {
             <div className="Filters">
             {selectedFilter}
     </div>
-        );
+
+
+            <div className="PriceColumn">
+            <h3 className="PriceText">{this.props.price} DA</h3>
+        <h3 className="PriceDetails"> ttc/pers</h3>
+        </div>
+
+
+
+        <div className="QVOfferNameContainer">
+            <h5 className="QVhotelName">{this.props.selectedQuickViewOffer.offerTitle}</h5>
+        </div>
+
+        <div className="QVOfferNameContainer">
+            <h4 className="QVhotelName">Date de départ: {this.props.selectedQuickViewOffer.departureDate}</h4>
+    </div>
+
+    <div className="QVOfferNameContainer">
+    <h4 className="QVhotelName">Durée: {this.props.selectedQuickViewOffer.travelDuration} jours</h4>
+    </div>
+
+    <div className="QVhotelNameContainer">
+    <h2 className="QVhotelName">Au départ de: {this.props.selectedQuickViewOffer.departureCity}</h2>
+    </div>
+
+    <div className="QVhotelNameContainer">
+    <h2 className="QVhotelName">{this.props.selectedQuickViewOffer.hotel} Resort 4*</h2>
+    </div>
+
+    <div className="QVhotelNameContainer">
+    <h2 className="QVhotelName">Vol avec: {this.props.selectedQuickViewOffer.flyingCompany}</h2>
+    </div>
+
+    <div className="QVTravelAgencyRow">
+    <div className="QVagencyNameAddress">
+    <h3 className="QVagencyName">{this.props.selectedQuickViewOffer.travelAgency}</h3>
+    <h4 className="QVagencyAddress">{this.props.selectedQuickViewOffer.agencyAddress}</h4>
+    </div>
+    <div className="QVagencyPhoneNumber">
+    <h1 className="QVagencyPhoneNumberText">{this.props.selectedQuickViewOffer.agencyPhone}</h1>
+    </div>
+
+    </div>
+
+
+    <div className="QVHotelPhotosColumn">
+    <img src={`data:image/jpeg;base64,${this.props.selectedQuickViewOffer.hotelImage}`} width="711px" height="350px" alt=""/>
+    </div>
+
+    <img src={`data:image/jpeg;base64,${this.props.mainPhoto}`} width="820px" height="350px" alt=""/>
+
+    );
+
+
+    <div className="form-row">
+    <div className="form-group col-md-5 pl-3 pt-3">
+    <label htmlFor="inputLastName" className="formLabel">Nom</label>
+    <input type="text" className="form-control" id="inputLastName" placeholder="Nom"/>
+    </div>
+    <div className="form-group col-md-5 pl-3 pt-3">
+    <label htmlFor="inputFirstName" className="formLabel">Prénom</label>
+    <input type="text" className="form-control" id="inputFirstName" placeholder="Prénom"/>
+    </div>
+    </div>
+
+
+    this.state = {
+    firstName : '',
+    lastName : null,
+    adultsNumb : null,
+    childrenNumb : null,
+    babiesNumb : null,
+    complementaryInfo : null,
+    phoneNumber : null,
+    email : null,
+    };
     }
 }
 

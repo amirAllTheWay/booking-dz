@@ -9,13 +9,28 @@ export const newResearchRequest = (researchParams) => {
     return searchCaller.getTourismResults(researchParams);
 };
 
+export const launchPreorderVisualizer = (offerReference, preorderID) => {
 
-export const notifySearchButtonClicked = () => {
+    return searchCaller.getPreorderData(offerReference, preorderID);
+};
+
+export const generatePreorder = (preorder) => {
+    // Do the async call, when answer received dispatch an event
+    return searchCaller.generatePreorder(preorder);
+};
+
+export const notifyGeneratePreorderClicked = (preorder) => {
+    return {
+        type: "GENERATE_PREORDER_BUTTON_CLICKED",
+        payload: preorder
+    };
+};
+
+export const notifySearchButtonClicked = (preorder) => {
     return {
         type: "SEARCH_BUTTON_CLICKED"
     };
 };
-
 
 export const searchButtonClicked = () => {
 

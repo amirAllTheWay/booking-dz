@@ -128,13 +128,8 @@ const mapDispatchToProps = dispatch => {
     //let  researchParams  = {departureCity: this.state.departureCity, destinationCity: this.state.destinationCity};
     return {
         onSearchButtonClicked: (researchParams, property) => {
-            console.log(" ***** onSearchButtonClicked 1: ", property);
-            console.log(" ***** onSearchButtonClicked 2: ", researchParams.departureCity);
-
             dispatch(actionCreators.searchButtonClicked());
-
             dispatch(actionCreators.newResearchRequest(researchParams));
-
             property.history.push("/tourismResults");
         }
     };

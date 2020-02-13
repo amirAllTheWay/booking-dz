@@ -1,7 +1,28 @@
 import {Component} from "react";
 import React from "react";
 import '../BookingForm/BookingForm.css';
+import * as actionCreators from "../../store/actions/actions";
+import {connect} from "react-redux";
+import {withRouter} from 'react-router-dom';
+import {Button} from "react-bootstrap";
+import PreorderVisualizer from "../../PreorderVisualizer/PreorderVisualizer";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
+
+const ModalComponent = ({ handleClose, handlePrint, show, children }) => {
+    const showHideClassname = show ? "modal display-block" : "modal display-none";
+
+    return (
+        <div className={showHideClassname}>
+            <section backdrop="true" class="modal-main">
+                {children}
+                    <button className="btn btn-primary pr-2" onClick={handlePrint}>Enregistrer</button>
+                    <button className="btn btn-secondary pl-3" onClick={handleClose}>Fermer</button>
+            </section>
+        </div>
+    );
+};
 
 class BookingForm extends Component {
 
@@ -10,22 +31,75 @@ class BookingForm extends Component {
         this.state = {
             firstName : null,
             lastName : null,
-            roomsNumber : null,
-            adultsNumber : null,
-            childrenNumber : null,
-            babiesNumber : null,
-            additionalInfo : null,
+            roomsNumber : 1,
+            adultsNumber : 1,
+            childrenNumber : 0,
+            babiesNumber : 0,
+            complementaryInfo : null,
             phoneNumber : null,
             email : null,
             confirmationEmail : null,
+            href: '/preorder',
+            show: false,
+            preorder: {},
         };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        //this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    showModal = () => {
+        this.setState({ show: true });
+    }
+
+    hideModal = () => {
+        this.setState({ show: false });
+    }
+
+    printPreorderAndCloseModal = () => {
+        const Element = document.getElementById("preorder-container");
+        console.log("---- Element", Element);
+        let pdf = new jsPDF('p','pt','a4');
+        html2canvas(Element).then(canvas => {
+            const dataURL = canvas.toDataURL();
+            const pdf = new jsPDF();
+
+            pdf.addImage(dataURL, 'PNG', 12, 7, 180, 160);
+
+            pdf.save('saved.pdf')
+        }).catch(
+            error =>{
+                console.log("error: ", error);
+            }
+        )
+
+        setTimeout(
+            () => {
+                this.setState({ show: false });
+            }, 30);
+
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        //const data = new FormData(event.target);
+
+        let preorder = {offerReference: this.props.selectedQuickViewOffer.offerReference,
+            userFirstName: this.state.firstName,
+            userLastName: this.state.lastName,
+            userEmail: this.state.email,
+            userPhone: this.state.phoneNumber,
+            numberRooms: this.state.roomsNumber,
+            numberAdults: this.state.adultsNumber,
+            numberChildren: this.state.childrenNumber,
+            numberBabies: this.state.babiesNumber,
+            complementaryInfo: this.state.complementaryInfo
+        };
+        this.setState({preorder: preorder},
+            () => {
+                this.props.onGeneratePreorderClicked(preorder);
+                this.showModal();
+            }
+        );
     }
 
     onFirstNameChange = (event) => {
@@ -52,8 +126,8 @@ class BookingForm extends Component {
         this.setState({babiesNumber: event.target.value});
     }
 
-    onAdditionalInformationChange = (event) => {
-        this.setState({additionalInfo: event.target.value});
+    onComplementaryInfoChange = (event) => {
+        this.setState({complementaryInfo: event.target.value});
     }
 
     onPhoneNumberChange = (event) => {
@@ -68,10 +142,17 @@ class BookingForm extends Component {
         this.setState({confirmationEmail: event.target.value});
     }
 
+
+
     render() {
+        if(this.props.preorderID !== null && this.props.preorderID !== undefined ) {
+            console.log('----- BookingForm preorderID NOT null', this.props.preorderID);
+            //onSubmit={this.handleSubmit}
+        }
 
         return (
-                <form className="booking-form-container pl-3" onSubmit={this.handleSubmit}>
+            <div>
+                <form id="divToPrint" className="booking-form-container pl-3" >
                     <div className="form-group row pt-3">
                         <label className="col-sm-1 col-form-label font-weight-bold">Nom</label>
                         <div className="col-sm-4">
@@ -132,7 +213,7 @@ class BookingForm extends Component {
                     <div className="form-group row">
                         <label className="col-sm-6 pl-1 col-form-label font-weight-bold">Informations complémentaires :</label>
                         <div className="col-sm-5">
-                            <textarea className="form-control" rows="3" onChange={this.onAdditionalInformationChange}></textarea>
+                            <textarea className="form-control" rows="3" onChange={this.onComplementaryInfoChange}></textarea>
                         </div>
                     </div>
 
@@ -158,15 +239,33 @@ class BookingForm extends Component {
                         </div>
                     </div>
                     <div className="row pt-3 pr-4 flex-row-reverse">
-                        <button type="submit" className="btn btn-success font-weight-bold">Envoyer la pré-réservation</button>
+                        <Button className="btn btn-success font-weight-bold" onClick={this.handleSubmit}>Envoyer la pré-réservation
+                        </Button>
                     </div>
-
                 </form>
-        );
+                <ModalComponent show={this.state.show} handlePrint={this.printPreorderAndCloseModal} handleClose={this.hideModal}>
+                    <PreorderVisualizer preorder={this.state.preorder} selectedQuickViewOffer={this.props.selectedQuickViewOffer}/>
+                </ModalComponent>
+            </div>
+            );
+
     }
 }
 
 
-export default BookingForm;
 
+const mapStateToProps = state => {
+    return {
+        preorderID: state.preorderID
+    }
+};
 
+const mapDispatchToProps = dispatch => {
+    return {
+        onGeneratePreorderClicked: (preorder) => {
+            dispatch(actionCreators.generatePreorder(preorder));
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(BookingForm));

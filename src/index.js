@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import  thunk  from 'redux-thunk';
 import reducer from './store/reducer';
 import { BrowserRouter } from 'react-router-dom';
+import 'moment/locale/fr';
 
 
 import * as serviceWorker from './serviceWorker';

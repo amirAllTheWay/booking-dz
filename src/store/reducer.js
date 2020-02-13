@@ -12,7 +12,9 @@ const initialState = {
     omraResults: [],
     authInfo: null,
     offerManagementStatus: null,
-    selectedQuickViewOffer: null
+    selectedQuickViewOffer: null,
+    preorderID: null,
+    preorderData: {}
 }
 
 const
@@ -238,6 +240,24 @@ const
             offerManagementStatus: null
         };
     }
+
+    if (action.type === 'GENERATE_PREORDER') {
+        console.log("reducer GENERATE_PREORDER payload: ", action.payload);
+        return {
+            ...state,
+            preorderID: action.payload.id
+        };
+    }
+
+    if (action.type === 'PREORDER_DATA') {
+        console.log("reducer GENERATE_PREORDER_BUTTON_CLICKED payload: ", action.payload);
+        return {
+            ...state,
+            preorderData: action.payload.preorderData
+        };
+    }
+
+
 
     return state;
 }

@@ -11,6 +11,7 @@ import OfferDetails from "./OfferDetails/OfferDetails";
 import TourismFilterPage from "./TourismFilterPage/TourismFilterPage";
 import Authentication from "./AdminPage/Authentication/Authentication";
 import AdminPage from "./AdminPage/AdminPage";
+import PreorderVisualizer from "./PreorderVisualizer/PreorderVisualizer";
 
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
               <Route path="/tourismPage"  exact component={TourismFilterPage} />
               <Route path="/auth"  exact component={Authentication} />
               <Route path="/admin"  exact component={AdminPage} />
+              <Route path="/preorder"  exact component={PreorderVisualizer} />
           </Switch>
 
       </div>
