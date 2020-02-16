@@ -9,11 +9,6 @@ export const newResearchRequest = (researchParams) => {
     return searchCaller.getTourismResults(researchParams);
 };
 
-export const launchPreorderVisualizer = (offerReference, preorderID) => {
-
-    return searchCaller.getPreorderData(offerReference, preorderID);
-};
-
 export const generatePreorder = (preorder) => {
     // Do the async call, when answer received dispatch an event
     return searchCaller.generatePreorder(preorder);

@@ -213,14 +213,6 @@ const mapStateToProps = state => {
     }
 };
 
-const mapDispatchToProps = dispatch => {
 
-    return {
-        onVisualizerLaunched: (offerReference, preorderID) => {
-            dispatch(actionCreators.launchPreorderVisualizer(offerReference, preorderID));
-        }
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(PreorderVisualizer);
+export default connect(mapStateToProps, null)(PreorderVisualizer);
 

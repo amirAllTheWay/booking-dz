@@ -126,12 +126,16 @@ export const addTourismOffer = (tourismOffer) => {
 };
 export const generatePreorder = (preorder) => {
 
-    let route = 'http://localhost:8000/generatePreorder';
+    //let route = 'http://localhost:8000/generatePreorder';
+    let route = 'https://sama-djazair.herokuapp.com/generatePreorder';
     console.log("generatePreorder: ", preorder);
 
     return dispatch => {
         axios.post(route, preorder).then(
-            response => dispatch({type: "GENERATE_PREORDER", payload: response.data}),
+            response => {
+                console.log("**** generatePreorder response: ", response);
+                dispatch({type: "GENERATE_PREORDER", payload: response.data});
+                },
             (error) => { console.log("ERROR GENERATE PREORDER: ", error.toString()) }
         )
 
