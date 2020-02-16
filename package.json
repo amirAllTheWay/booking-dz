@@ -28,7 +28,7 @@
     "react-day-picker": "^7.2.4",
     "react-dom": "^16.8.1",
     "react-file-base64": "^1.0.3",
-    "react-moment": "^0.9.7",
+    "react-moment": "0.9.7",
     "react-new-window": "^0.1.2",
     "react-pdf": "^4.1.0",
     "react-redux": "^6.0.1",
