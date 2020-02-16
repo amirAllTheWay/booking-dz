@@ -4,11 +4,6 @@ import './OfferQuickView.css';
 import {connect} from "react-redux";
 import PhotoDisplayer from "./PhotoDisplayer/PhotoDisplayer";
 import DetailTabs from "./DetailTabs/DetailTabs";
-import Table from "react-bootstrap/Table";
-import Moment from "react-moment";
-import {StyleSheet} from "@react-pdf/renderer";
-import PreorderVisualizer from "../PreorderVisualizer/PreorderVisualizer";
-
 
 class OfferQuickView extends Component {
 
