@@ -58,7 +58,6 @@ class BookingForm extends Component {
 
     printPreorderAndCloseModal = () => {
         const Element = document.getElementById("preorder-container");
-        console.log("---- Element", Element);
         let pdf = new jsPDF('p','pt','a4');
         html2canvas(Element).then(canvas => {
             const dataURL = canvas.toDataURL();

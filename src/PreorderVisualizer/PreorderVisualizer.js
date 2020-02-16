@@ -1,11 +1,9 @@
 import {Component} from "react";
 import React from "react";
-import jsPDF from 'jspdf';
 import './PreorderVisualizer.css';
-import { Document, Page, Text, View, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
+import { StyleSheet } from '@react-pdf/renderer';
 import Table from 'react-bootstrap/Table';
 import Moment from 'react-moment';
-import html2canvas from 'html2canvas';
 import {connect} from "react-redux";
 import {ClipLoader} from "react-spinners";
 import * as actionCreators from "../store/actions/actions";
@@ -22,30 +20,6 @@ class PreorderVisualizer extends Component {
             offer: null,
             preorder: null
         };
-
-        console.log("previsualize: ", this.props);
-        //this.props.onVisualizerLaunched(offerReference, preorderID);
-    }
-
-    componentDidMount() {
-       /* setTimeout(
-            () => {
-                const Element = document.getElementById("preorder-container");
-                let pdf = new jsPDF('p','pt','a4');
-                html2canvas(Element).then(canvas => {
-                    const dataURL = canvas.toDataURL();
-                    const pdf = new jsPDF();
-
-                    pdf.addImage(dataURL, 'PNG', 20, 20, 180, 160);
-
-                    pdf.save('saved.pdf')
-                }).catch(
-                    error =>{
-                        console.log("error: ", error);
-                    }
-                )},
-            1000
-        );*/
     }
 
     render() {
@@ -77,7 +51,6 @@ class PreorderVisualizer extends Component {
         });
 
         let selectedView = null;
-        console.log("---- this.props.preorder: ", this.props.preorder);
         if(this.props.preorder === null ||  this.props.preorder === undefined) {
             selectedView = (
                 <div className='sweet-loading'>

@@ -220,7 +220,6 @@ const
     if (action.type === 'ADD_TOURISM_OFFER') {
         console.log("reducer ADD_TOURISM_OFFER payload: ", action.payload);
         let offerManagementStatus = {};
-        console.log("reducer ADD_TOURISM_OFFER payload: ", action.payload.responseCode);
         if(action.payload.responseCode === HttpStatus.CREATED) {
             offerManagementStatus.isOfferAddedSuccessfully = true;
         } else {
