@@ -57,23 +57,6 @@ gdnchhfhff
 
 
     onSubmitNewOfferClicked() {
-            this.offerTitle.current.value,
-            this.departureCity.current.value,
-            this.destinationCity.current.value,
-            this.distanceDuHaram.current.value,
-            this.state.departureDate.toISOString().split("T")[0],
-            this.state.returnDate.toISOString().split("T")[0],
-            parseInt(this.travelDuration.current.value, 10),
-            this.hotelName.current.value,
-            parseInt(this.hotelStars.current.value, 10),
-            this.flyingCompany.current.value,
-            this.offerPrice.current.value,
-            this.offerDescription.current.value,
-            this.offerAgency.current.value,
-            this.agencyAddress.current.value,
-            this.agencyPhone.current.value,
-            this.agencyEmail.current.value,
-            this.state.offerPhoto);
 
         this.props.onAddOmraOfferClicked({ isHotOffer: false, offerTitle: this.offerTitle.current.value, departureCity: this.departureCity.current.value, destinationCity: this.destinationCity.current.value,
             distanceDuHaram: this.distanceDuHaram.current.value, departureDate: this.state.departureDate.toISOString().split("T")[0], returnDate: this.state.returnDate.toISOString().split("T")[0],
