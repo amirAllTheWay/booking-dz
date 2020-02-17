@@ -100,7 +100,6 @@ const mapDispatchToProps = dispatch => {
 
     return {
         offerDetailsButtonClicked: (props, offerReference) => {
-            console.log("offerDetailsButtonClicked offerReference: ", offerReference);
             dispatch(actionCreators.offerQuickViewButtonClicked(offerReference));
         }
     };

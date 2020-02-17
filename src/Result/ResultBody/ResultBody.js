@@ -1,12 +1,8 @@
 import {Component} from "react";
 import React from "react";
-
-
 import './ResultBody.css';
-import ResultFilter from "./ResultFilter/ResultFilter";
 import ResultList from "./ResultList/ResultList";
 import OfferQuickView from "../../OfferQuickView/OfferQuickView";
-import ResultHeader from "../ResultHeader/ResultHeader";
 import {connect} from "react-redux";
 
 class ResultBody extends Component {

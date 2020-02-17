@@ -69,21 +69,6 @@ export const getHotTourismOffers = () => {
     };
 };
 
-const onAllTourismOffersReceived = (response) => {
-
-    console.log(" ++++ onAllTourismOffersReceived: response: ", response);
-
-    let hotTourismOffers = {
-        researchType: "tourism",
-        results: response.data.tourismOffers
-    };
-
-    return {
-        type: "TOOLABR_ALL_TOURISM_OFFERS_RECEIVED",
-        payload: hotTourismOffers
-    };
-};
-
 export const getAllTourismOffers = () => {
 
     let route = "https://cors-anywhere.herokuapp.com/https://sama-djazair.herokuapp.com/getOffers/allTourismOffers";

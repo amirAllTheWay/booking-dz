@@ -4,7 +4,6 @@ import * as searchCaller from '../../services/searchCaller';
 
 export const newResearchRequest = (researchParams) => {
 
-    console.log("actions event: ", researchParams);
     // Do the async call, when answer received dispatch an event
     return searchCaller.getTourismResults(researchParams);
 };

@@ -34,7 +34,6 @@ class PhotoDisplayer extends Component {
                 </div>
             );
         } else {
-            console.log("------- selectedQuickViewOffer: ", this.props.selectedQuickViewOffer);
             selectedView = (
                 <div>
                     <div className="MainPhoto">

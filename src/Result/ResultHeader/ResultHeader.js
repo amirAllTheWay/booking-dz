@@ -28,11 +28,9 @@ class ResultHeader extends Component {
     }
 
     departureCitySelected = (departureCity) => {
-        console.log("departureCitySelected: ", departureCity);
     }
 
     destinationCitySelected = (destinationCity) => {
-        console.log("destinationCitySelected: ", destinationCity);
     }
 
     render() {

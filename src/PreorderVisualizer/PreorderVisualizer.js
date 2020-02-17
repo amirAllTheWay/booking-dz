@@ -4,10 +4,8 @@ import './PreorderVisualizer.css';
 import { StyleSheet } from '@react-pdf/renderer';
 import Table from 'react-bootstrap/Table';
 import Moment from 'react-moment';
-import * as moment from "moment"
 import {connect} from "react-redux";
 import {ClipLoader} from "react-spinners";
-import * as actionCreators from "../store/actions/actions";
 
 Moment.globalLocale = 'fr';
 Moment.globalFormat = 'DD MMMM YYYY';

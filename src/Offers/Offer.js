@@ -8,7 +8,6 @@ class Offer extends Component {
 
     render() {
         let style = "Offer";
-        //console.log("this.props.isOfferSelected: ", this.props.isOfferSelected);
         if (this.props.offerKey === "off1") {
             if (this.props.isOfferSelected === true) {
                 style = "Offer LargeOfferWidth OfferClicked";

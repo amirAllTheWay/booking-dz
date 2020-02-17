@@ -1,6 +1,6 @@
 import {Component} from "react";
 import React from "react";
-import {Button, Form, Row, Col, Alert, Tabs, Tab} from 'react-bootstrap';
+import {Button, Form, Row, Col, Alert} from 'react-bootstrap';
 import DatePicker from "react-datepicker/es";
 import * as actionCreators from "../../store/actions/actions";
 import {connect} from "react-redux";

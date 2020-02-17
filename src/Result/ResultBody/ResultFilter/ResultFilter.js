@@ -44,7 +44,6 @@ class ResultFilter extends Component {
 
     handlePriceFilterChange = (priceValue) => {
         this.setState({priceFilterValue: priceValue}, () =>{
-            console.log(" ++++++ handlePriceFilterChange: state: ", this.state);
             this.props.onFilterValuesChanged(this.state);
         });
     }
@@ -56,9 +55,7 @@ class ResultFilter extends Component {
     }
 
     handleHotelStarsFilterChange = (hotelStarsValue) => {
-        console.log(" ********** Handle hotel stars filter change", hotelStarsValue);
         this.setState({hotelStarsValue: hotelStarsValue}, () =>{
-            console.log(" ++++++ handleHotelStarsFilterChange: state: ", this.state);
             this.props.onFilterValuesChanged(this.state);
         });
     }

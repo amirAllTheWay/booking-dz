@@ -10,9 +10,7 @@ class Offers extends Component {
 
 
     deletePerson = (personIndex, offerClicked) => {
-        //console.log("Offer clicked: ", listOfOffers[personIndex].id);
         offerClicked(personIndex);
-
     }
 
     render() {
