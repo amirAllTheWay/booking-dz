@@ -15,7 +15,7 @@ const ModalComponent = ({ handleClose, handlePrint, show, children }) => {
 
     return (
         <div className={showHideClassname}>
-            <section backdrop="true" class="modal-main">
+            <section backdrop="true" className="modal-main">
                 {children}
                     <button className="btn btn-primary pr-2" onClick={handlePrint}>Enregistrer</button>
                     <button className="btn btn-secondary pl-3" onClick={handleClose}>Fermer</button>
