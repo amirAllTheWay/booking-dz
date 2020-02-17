@@ -33,7 +33,7 @@ class Toolbar extends Component {
             }
         }
 
-        this.setState({toolbarButtons: btnsState}, () => {console.log("updateToolbarState: ", this.state);});
+        this.setState({toolbarButtons: btnsState});
     }
 
     onToolbarTourismButtonClicked = (btnKey, property) => {

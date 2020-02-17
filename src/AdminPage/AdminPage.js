@@ -46,7 +46,7 @@ class AdminPage extends Component{
     }
 
     getFiles(files){
-        this.setState({ files: files }, () => {console.log("StateFiles: ", this.state.files)});
+        this.setState({ files: files });
     }
 
     handleDepartureChange(date) {
@@ -76,7 +76,6 @@ class AdminPage extends Component{
         let addOfferResponseMsg = null;
 
         if (this.props.offerManagementStatus != null) {
-            console.log("[AdminPage] : ", );
             if(this.props.offerManagementStatus.isOfferAddedSuccessfully === false) {
 
 

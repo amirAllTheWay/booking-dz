@@ -40,7 +40,7 @@ class OmraForm extends Component{
     }
 
     getFiles(files){
-        this.setState({ files: files }, () => {console.log("StateFiles: ", this.state.files)});
+        this.setState({ files: files });
     }
 
     handleDepartureChange(date) {
@@ -57,7 +57,6 @@ gdnchhfhff
 
 
     onSubmitNewOfferClicked() {
-        console.log("[OmraForm] onSubmitNewOfferClicked: ",
             this.offerTitle.current.value,
             this.departureCity.current.value,
             this.destinationCity.current.value,
@@ -90,7 +89,6 @@ gdnchhfhff
         let addOfferResponseMsg = null;
 
         if (this.props.offerManagementStatus != null) {
-            console.log("[OmraForm] : ", );
             if(this.props.offerManagementStatus.isOfferAddedSuccessfully === false) {
 
 

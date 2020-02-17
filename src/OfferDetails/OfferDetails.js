@@ -7,7 +7,6 @@ class OfferDetails extends Component {
 
 
     render() {
-        console.log("----- OfferDetails : ", this.props);
         return (
             <div className="pageContainer">
                 <div className="offerDetails">

@@ -25,7 +25,6 @@ class HotOffers extends Component {
 
         if(this.props.hotTourismOffers === undefined || this.props.hotTourismOffers === null || this.props.hotTourismOffers.results === null  || this.props.hotTourismOffers.results === undefined) {
 
-            console.log(" **** Hot offers NULL");
             selectedView = (
                <div>
                    {this.state.hotTourismOffers.map((result, index) => {
@@ -42,7 +41,6 @@ class HotOffers extends Component {
                </div>
             );
         } else {
-            console.log(" **** Hot offers NOT NULL", this.props.hotTourismOffers);
             selectedView = (
                 <div className="container">
                         {this.props.hotTourismOffers.results.map((result, index) => {

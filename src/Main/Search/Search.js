@@ -38,12 +38,11 @@ class Search extends Component {
 
 
     departureCitySelected = (departureCity) => {
-        console.log("departureCitySelected: value: ", departureCity.value);
-        this.setState({departureCity: departureCity.value}, () => {console.log("departureCitySelected: state: ", this.state.departureCity);});
+        this.setState({departureCity: departureCity.value});
     }
 
     destinationCitySelected = (destinationCity) => {
-        this.setState({destinationCity: destinationCity.value},() => {console.log("destinationCitySelected:: state: ", this.state.destinationCity);});
+        this.setState({destinationCity: destinationCity.value});
     }
 
     handleOfferClicked = (offerId) => {
@@ -63,8 +62,6 @@ class Search extends Component {
 
     render() {
         let selectedFilter = null;
-        //console.log("Filters selected filter: ", this.props.selectedOffedIndex);
-
 
         if(this.state.selectedOffedIndex === 0)
         {

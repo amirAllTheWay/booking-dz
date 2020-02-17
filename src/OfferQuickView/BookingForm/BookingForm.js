@@ -144,10 +144,6 @@ class BookingForm extends Component {
 
 
     render() {
-        if(this.props.preorderID !== null && this.props.preorderID !== undefined ) {
-            console.log('----- BookingForm preorderID NOT null', this.props.preorderID);
-            //onSubmit={this.handleSubmit}
-        }
 
         return (
             <div>

@@ -26,16 +26,6 @@ class Authentication extends Component {
         }
     }
 
-    logTest = () => {
-
-        console.log("Auth State succeeded");
-        //if(state.authInfo != null && state.authInfo.isAuthenticated === true) {
-
-            //this.props.history.push("/auth");
-        //}
-
-        //return state.authInfo;
-    }
     authButtonClicked = () => {
         this.props.onAuthButtonClicked({email: this.email.current.value, password: this.password.current.value});
     }
@@ -87,7 +77,6 @@ class Authentication extends Component {
                 </div>
             );
         } else if(this.props.authInfo != null && this.props.authInfo.isAuthenticated === true) {
-            this.logTest();
             view = (
                 <div className="AdminPage">
                     <div>

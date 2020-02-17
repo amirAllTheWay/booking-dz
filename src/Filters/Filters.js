@@ -11,8 +11,6 @@ class Filters extends Component {
 
     render() {
         let selectedFilter = null;
-        //console.log("Filters selected filter: ", this.props.selectedOffedIndex);
-
 
         if(this.props.selectedOffedIndex === 0)
         {
