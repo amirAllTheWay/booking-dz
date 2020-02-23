@@ -88,7 +88,7 @@ class Result extends Component {
 
 
         return (
-            <div className="container">
+            <div>
                 {selectedView}
             </div>
         );
