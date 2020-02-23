@@ -18,8 +18,12 @@ class OfferQuickView extends Component {
         else {
             selectedView = (
                     <div className="OfferQuickView">
-                        <PhotoDisplayer/>
-                        <DetailTabs selectedQuickViewOffer={this.props.selectedQuickViewOffer}/>
+                        <div>
+                            <PhotoDisplayer/>
+                        </div>
+                        <div>
+                            <DetailTabs selectedQuickViewOffer={this.props.selectedQuickViewOffer}/>
+                        </div>
                     </div>
             );
         }
